@@ -7,9 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  turbopack: {
-    root: '/Users/omer/work/beykozkurban'
-  }
 };
 
 export default nextConfig;
