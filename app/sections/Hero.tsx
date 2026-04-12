@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20">
+    <section id="hero" className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center pt-20 pb-8 md:pb-0">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#253D10] via-[#3a5a20] to-[#2d4a15]" />
       
@@ -48,8 +48,8 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
           </a>
         </div>
 
-        {/* Mini Features */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {/* Mini Features - Hidden on mobile */}
+        <div className="hidden md:grid md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
             { icon: Shield, text: "İslami Usullere Uygun" },
             { icon: Truck, text: "Aynı Gün Teslimat" },
@@ -64,8 +64,8 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll Indicator - Hidden on mobile */}
+      <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
           <div className="w-1 h-2 bg-white/50 rounded-full" />
         </div>
