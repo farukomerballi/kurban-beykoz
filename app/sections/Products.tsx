@@ -36,13 +36,13 @@ export function Products({ whatsapp }: ProductsProps) {
         {/* Kurbanlık Kartları - Yan Yana */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {kurbanliklar.map((item, index) => (
-            <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-[#B88619]/30 hover:shadow-[0_0_30px_rgba(184,134,25,0.15)]">
               <div className="relative aspect-video">
                 <Image
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover"
                   priority
                 />
                 {/* Logo overlay - sağ alt köşe */}
