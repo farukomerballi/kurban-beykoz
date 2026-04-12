@@ -44,6 +44,8 @@ export function Products({ whatsapp }: ProductsProps) {
                   className="object-cover"
                   priority
                 />
+                {/* Logo overlay - sağ alt köşe */}
+                <div className="absolute bottom-0 right-0 w-32 h-20 bg-gradient-to-tl from-white via-white/80 to-transparent" />
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
