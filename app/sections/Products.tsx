@@ -23,11 +23,11 @@ export function Products({ whatsapp }: ProductsProps) {
   return (
     <section id="products" className="py-20 bg-[#FBF6EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
             2026 Kurbanlık Fiyatları
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Hijyenik koşullarda, İslami usullere uygun kesim hizmeti.
             Fiyatlarımıza kesim, parçalama ve paketleme dahildir.
           </p>
@@ -36,13 +36,13 @@ export function Products({ whatsapp }: ProductsProps) {
         {/* Kurbanlık Kartları - Yan Yana */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {kurbanliklar.map((item, index) => (
-            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-xl">
+            <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1">
               <div className="relative aspect-video">
                 <Image
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
                 {/* Logo overlay - sağ alt köşe */}
