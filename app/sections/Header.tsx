@@ -31,9 +31,11 @@ export function Header({ phone, whatsapp }: HeaderProps) {
               <Image 
                 src="/images/logo.png" 
                 alt="Beykoz Kurban" 
-                width={120} 
-                height={120} 
-                className="rounded-full logo-image"
+                width={50} 
+                height={50} 
+                className="rounded-full"
+                loading="eager"
+                priority
               />
             </button>
           </div>
