@@ -7,13 +7,13 @@ interface FeaturesProps {
 
 export function Features({ features }: FeaturesProps) {
   return (
-    <section id="features" className="py-20 bg-[#F2E8D0]">
+    <section id="features" className="py-24 bg-[#FBF6EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
             Neden Beykoz Kurban?
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Yılların tecrübesiyle, İslami usullere uygun ve hijyenik koşullarda 
             kurban kesim hizmeti sunuyoruz.
           </p>
