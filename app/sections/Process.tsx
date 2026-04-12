@@ -81,9 +81,10 @@ export function Process() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-8 relative">
+        {/* Desktop: Horizontal Timeline - Hidden on mobile */}
+        <div className="hidden md:grid md:grid-cols-5 gap-8 relative">
           {/* Desktop: Horizontal Timeline */}
-          <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-[#B88619]/20 via-[#B88619] to-[#B88619]/20" />
+          <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-[#B88619]/20 via-[#B88619] to-[#B88619]/20" />
           
           {steps.map((item, index) => (
             <div key={item.step} className="relative text-center">
