@@ -33,10 +33,10 @@ export function Products({ whatsapp }: ProductsProps) {
         </div>
 
         {/* Kurbanlık Kartları - Yan Yana */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {kurbanliklar.map((item, index) => (
             <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-xl">
-              <div className="relative aspect-video">
+              <div className="relative aspect-[4/3]">
                 <Image
                   src={item.image}
                   alt={item.alt}
