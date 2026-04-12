@@ -11,8 +11,7 @@ export function useConfig() {
   useEffect(() => {
     async function loadConfig() {
       try {
-        const basePath = process.env.NODE_ENV === 'production' ? '/beykozkurban' : '';
-        const response = await fetch(`${basePath}/data/config.json`);
+        const response = await fetch('/data/config.json');
         if (!response.ok) {
           throw new Error('Config yüklenemedi');
         }
