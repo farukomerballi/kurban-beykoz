@@ -1,5 +1,4 @@
 import { Phone, Clock, Shield, Truck, Award, Package, Users } from 'lucide-react';
-import { WhatsAppButton } from '../components/WhatsAppButton';
 
 interface HeroProps {
   phone: string;
@@ -42,9 +41,14 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <WhatsAppButton phone={whatsapp} className="text-lg py-4 px-8">
+          <a 
+            href={`https://wa.me/${whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold text-lg py-4 px-8 rounded-lg hover:bg-[#128C7E] transition-colors"
+          >
             WhatsApp&apos;tan Bilgi Al
-          </WhatsAppButton>
+          </a>
           <a 
             href={`tel:${phone}`}
             className="inline-flex items-center gap-2 bg-white text-[#253D10] hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors"

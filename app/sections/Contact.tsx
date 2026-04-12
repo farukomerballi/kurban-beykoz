@@ -1,5 +1,4 @@
 import { Phone, MapPin, Clock } from 'lucide-react';
-import { WhatsAppButton } from '../components/WhatsAppButton';
 
 interface ContactProps {
   phone: string;
@@ -18,7 +17,7 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
             Bize Ulaşın
           </h2>
           <p className="text-gray-600 text-lg">
-            Sorularınız için bizi arayabilir veya WhatsApp'tan yazabilirsiniz.
+            Sorularınız için bizi arayabilir veya WhatsApp&apos;tan yazabilirsiniz.
           </p>
         </div>
 
@@ -37,9 +36,14 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
                   </a>
                 </div>
               </div>
-              <WhatsAppButton phone={whatsapp} className="w-full justify-center">
-                WhatsApp'tan Yaz
-              </WhatsAppButton>
+              <a 
+                href={`https://wa.me/${whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#128C7E] transition-colors w-full"
+              >
+                WhatsApp&apos;tan Yaz
+              </a>
             </div>
 
             <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">

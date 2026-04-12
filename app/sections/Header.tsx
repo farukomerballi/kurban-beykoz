@@ -1,9 +1,5 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
-import { Phone, Menu, X } from 'lucide-react';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { Phone } from 'lucide-react';
 
 interface HeaderProps {
   phone: string;
@@ -11,23 +7,13 @@ interface HeaderProps {
 }
 
 export function Header({ phone, whatsapp }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setMobileMenuOpen(false);
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button onClick={() => scrollToSection('hero')} className="flex items-center">
+            <a href="#hero" className="flex items-center">
               <Image 
                 src="/images/logo.png" 
                 alt="Beykoz Kurban" 
@@ -37,23 +23,23 @@ export function Header({ phone, whatsapp }: HeaderProps) {
                 loading="eager"
                 priority
               />
-            </button>
+            </a>
           </div>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-[#253D10] transition-colors">
+            <a href="#products" className="text-gray-700 hover:text-[#253D10] transition-colors">
               Kurbanlıklar
-            </button>
-            <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-[#253D10] transition-colors">
+            </a>
+            <a href="#features" className="text-gray-700 hover:text-[#253D10] transition-colors">
               Hizmetlerimiz
-            </button>
-            <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-[#253D10] transition-colors">
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-[#253D10] transition-colors">
               S.S.S.
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-[#253D10] transition-colors">
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-[#253D10] transition-colors">
               İletişim
-            </button>
+            </a>
           </nav>
 
           {/* Desktop CTA */}
@@ -65,48 +51,34 @@ export function Header({ phone, whatsapp }: HeaderProps) {
               <Phone size={18} />
               {phone}
             </a>
-            <WhatsAppButton phone={whatsapp} className="py-2 px-4 text-sm">
+            <a 
+              href={`https://wa.me/${whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#128C7E] transition-colors text-sm"
+            >
               WhatsApp
-            </WhatsAppButton>
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile CTA */}
+          <div className="md:hidden flex items-center gap-2">
+            <a 
+              href={`tel:${phone}`}
+              className="inline-flex items-center gap-1 text-[#253D10] font-semibold text-sm"
+            >
+              Ara
+            </a>
+            <a 
+              href={`https://wa.me/${whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 bg-[#25D366] text-white font-semibold py-2 px-3 rounded-lg hover:bg-[#128C7E] transition-colors text-sm"
+            >
+              WhatsApp
+            </a>
+          </div>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <nav className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection('products')} className="text-left text-gray-700 hover:text-[#253D10]">
-                Kurbanlıklar
-              </button>
-              <button onClick={() => scrollToSection('features')} className="text-left text-gray-700 hover:text-[#253D10]">
-                Hizmetlerimiz
-              </button>
-              <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-[#253D10]">
-                S.S.S.
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-[#253D10]">
-                İletişim
-              </button>
-              <div className="pt-4 border-t flex flex-col gap-3">
-                <a href={`tel:${phone}`} className="inline-flex items-center gap-2 text-[#253D10] font-semibold">
-                  <Phone size={18} />
-                  {phone}
-                </a>
-                <WhatsAppButton phone={whatsapp} className="justify-center">
-                  WhatsApp'tan Yaz
-                </WhatsAppButton>
-              </div>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   );

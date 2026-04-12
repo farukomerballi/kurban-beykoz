@@ -1,6 +1,5 @@
-import { WhatsAppButton } from '../components/WhatsAppButton';
 import Image from 'next/image';
-import { Moon, Hand } from 'lucide-react';
+import { Moon } from 'lucide-react';
 
 interface ProductsProps {
   whatsapp: string;
@@ -54,9 +53,14 @@ export function Products({ whatsapp }: ProductsProps) {
                 <h3 className="text-xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
                   {item.title}
                 </h3>
-                <WhatsAppButton phone={whatsapp} className="w-full justify-center">
+                <a 
+                  href={`https://wa.me/${whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#128C7E] transition-colors w-full"
+                >
                   WhatsApp&apos;tan Bilgi Al
-                </WhatsAppButton>
+                </a>
               </div>
             </div>
           ))}

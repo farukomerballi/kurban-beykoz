@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   description: "Beykoz'da İslami usullere uygun kurban kesim hizmeti. Hijyenik koşullarda, profesyonel ekiple kurban kesimi. WhatsApp'tan bilgi alın.",
   keywords: "beykoz kurban, kurban kesim, kurbanlık, istanbul kurban, kurban bayramı",
   icons: {
-    icon: '/images/logo.png',
-    shortcut: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
   },
   openGraph: {
     title: "Beykoz Kurban | İslami Usullere Uygun Kurban Kesim Hizmeti",
