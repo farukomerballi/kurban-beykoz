@@ -17,7 +17,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2D5A3D]" />
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#253D10]" />
       </div>
     );
   }
@@ -53,7 +53,7 @@ export default function Home() {
       
       <Features features={config.features} />
       
-      <Process steps={config.process} />
+      <Process />
       
       <FAQ faqs={config.faq} />
       
