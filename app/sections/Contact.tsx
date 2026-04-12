@@ -11,7 +11,7 @@ interface ContactProps {
 
 export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: ContactProps) {
   return (
-    <section id="contact" className="py-20 bg-[#F5F5DC]">
+    <section id="contact" className="py-20 bg-[#FBF6EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-4">
@@ -25,14 +25,14 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="bg-[#F5F5DC] rounded-xl p-6">
+            <div className="bg-[#F2E8D0] rounded-xl p-6">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#2D5A3D] rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center">
                   <Phone className="text-white" size={24} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#2C3E50]">Telefon</h3>
-                  <a href={`tel:${phone}`} className="text-[#2D5A3D] hover:text-[#4A7C59] text-lg font-semibold">
+                  <a href={`tel:${phone}`} className="text-[#253D10] hover:text-[#3a5a20] text-lg font-semibold">
                     {phone}
                   </a>
                 </div>
@@ -42,9 +42,9 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
               </WhatsAppButton>
             </div>
 
-            <div className="bg-[#F5F5DC] rounded-xl p-6">
+            <div className="bg-[#F2E8D0] rounded-xl p-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#2D5A3D] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="text-white" size={24} />
                 </div>
                 <div>
@@ -54,9 +54,9 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
               </div>
             </div>
 
-            <div className="bg-[#F5F5DC] rounded-xl p-6">
+            <div className="bg-[#F2E8D0] rounded-xl p-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#2D5A3D] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center flex-shrink-0">
                   <Clock className="text-white" size={24} />
                 </div>
                 <div>

@@ -12,7 +12,7 @@ interface FAQProps {
 
 export function FAQ({ faqs }: FAQProps) {
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-20 bg-[#F2E8D0]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-4">
@@ -28,9 +28,9 @@ export function FAQ({ faqs }: FAQProps) {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-white rounded-lg px-6 border-none shadow-sm"
+              className="bg-[#FBF6EC] rounded-lg px-6 border-none shadow-sm"
             >
-              <AccordionTrigger className="text-left font-semibold text-[#2C3E50] hover:text-[#2D5A3D]">
+              <AccordionTrigger className="text-left font-semibold text-[#2C3E50] hover:text-[#253D10]">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">

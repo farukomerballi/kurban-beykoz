@@ -45,6 +45,12 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  
+  /* Premium Colors */
+  --color-green-primary: #253D10;
+  --color-cream-light: #FBF6EC;
+  --color-cream-dark: #F2E8D0;
+  --color-gold: #B88619;
 }
 
 :root {
@@ -122,10 +128,13 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+    font-weight: 600;
   }
   html {
-    @apply font-sans;
     scroll-behavior: smooth;
   }
 }
-

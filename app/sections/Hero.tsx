@@ -11,7 +11,7 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#2D5A3D] via-[#4A7C59] to-[#3d7a52]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#253D10] via-[#3a5a20] to-[#2d4a15]" />
       
       {/* Pattern Overlay */}
       <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoLTJ2NGgyem0tNiA2di0yaC00djJoNHptMC02di00aC00djRoNHptLTYgNnYtMmgtNHYyaDR6bTAtNnYtNGgtNHY0aDR6Ii8+PC9nPjwvZz48L3N2Zz4=')]" />
@@ -19,7 +19,7 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-4">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
           Beykoz&apos;da Güvenilir<br />
-          <span className="text-[#D4AF37]">Kurban Hizmeti</span>
+          <span className="text-[#B88619]">Kurban Hizmeti</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
           </WhatsAppButton>
           <a 
             href={`tel:${phone}`}
-            className="inline-flex items-center gap-2 bg-white text-[#2D5A3D] hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-[#253D10] hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors"
           >
             <Phone size={20} />
             Bizi Arayın

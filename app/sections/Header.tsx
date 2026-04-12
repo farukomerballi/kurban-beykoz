@@ -31,8 +31,8 @@ export function Header({ phone, whatsapp }: HeaderProps) {
               <Image 
                 src="/images/logo.png" 
                 alt="Beykoz Kurban" 
-                width={50} 
-                height={50} 
+                width={150} 
+                height={150} 
                 className="rounded-full"
                 loading="eager"
                 priority
@@ -42,16 +42,16 @@ export function Header({ phone, whatsapp }: HeaderProps) {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-[#2D5A3D] transition-colors">
+            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-[#253D10] transition-colors">
               Kurbanlıklar
             </button>
-            <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-[#2D5A3D] transition-colors">
+            <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-[#253D10] transition-colors">
               Hizmetlerimiz
             </button>
-            <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-[#2D5A3D] transition-colors">
+            <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-[#253D10] transition-colors">
               S.S.S.
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-[#2D5A3D] transition-colors">
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-[#253D10] transition-colors">
               İletişim
             </button>
           </nav>
@@ -60,7 +60,7 @@ export function Header({ phone, whatsapp }: HeaderProps) {
           <div className="hidden md:flex items-center gap-3">
             <a 
               href={`tel:${phone}`}
-              className="inline-flex items-center gap-2 text-[#2D5A3D] hover:text-[#4A7C59] font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-[#253D10] hover:text-[#3a5a20] font-semibold transition-colors"
             >
               <Phone size={18} />
               {phone}
@@ -83,20 +83,20 @@ export function Header({ phone, whatsapp }: HeaderProps) {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection('products')} className="text-left text-gray-700 hover:text-[#2D5A3D]">
+              <button onClick={() => scrollToSection('products')} className="text-left text-gray-700 hover:text-[#253D10]">
                 Kurbanlıklar
               </button>
-              <button onClick={() => scrollToSection('features')} className="text-left text-gray-700 hover:text-[#2D5A3D]">
+              <button onClick={() => scrollToSection('features')} className="text-left text-gray-700 hover:text-[#253D10]">
                 Hizmetlerimiz
               </button>
-              <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-[#2D5A3D]">
+              <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-[#253D10]">
                 S.S.S.
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-[#2D5A3D]">
+              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-[#253D10]">
                 İletişim
               </button>
               <div className="pt-4 border-t flex flex-col gap-3">
-                <a href={`tel:${phone}`} className="inline-flex items-center gap-2 text-[#2D5A3D] font-semibold">
+                <a href={`tel:${phone}`} className="inline-flex items-center gap-2 text-[#253D10] font-semibold">
                   <Phone size={18} />
                   {phone}
                 </a>
