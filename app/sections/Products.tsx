@@ -1,6 +1,6 @@
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import Image from 'next/image';
-import { Beef, Rabbit } from 'lucide-react';
+import { Moon, Hand } from 'lucide-react';
 
 interface ProductsProps {
   whatsapp: string;
@@ -47,11 +47,7 @@ export function Products({ whatsapp }: ProductsProps) {
                 />
                 {/* Logo overlay - sağ alt köşe */}
                 <div className="absolute bottom-1 right-1 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                  {index === 0 ? (
-                    <Beef className="w-4 h-4 text-[#253D10]" />
-                  ) : (
-                    <Rabbit className="w-4 h-4 text-[#253D10]" />
-                  )}
+                  <Moon className="w-4 h-4 text-[#253D10]" />
                 </div>
               </div>
               <div className="p-6 text-center">
