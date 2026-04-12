@@ -1,4 +1,4 @@
-import { Phone, Clock, Shield, Truck } from 'lucide-react';
+import { Phone, Clock, Shield, Truck, Award, Package, Users } from 'lucide-react';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 
 interface HeroProps {
@@ -8,6 +8,12 @@ interface HeroProps {
 }
 
 export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
+  const stats = [
+    { icon: Award, value: "20+", label: "Yıllık Tecrübe" },
+    { icon: Package, value: "5 Yıllık", label: "Paket Hizmeti" },
+    { icon: Users, value: "60+", label: "Personel" },
+  ];
+
   return (
     <section id="hero" className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center pt-20 pb-8 md:pb-0">
       {/* Background */}
@@ -35,7 +41,7 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <WhatsAppButton phone={whatsapp} className="text-lg py-4 px-8">
             WhatsApp&apos;tan Bilgi Al
           </WhatsAppButton>
@@ -48,8 +54,20 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
           </a>
         </div>
 
+        {/* Stats - Mobile: After buttons, Web: After mini features */}
+        <div className="md:hidden flex justify-center gap-6 mb-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-2xl font-bold text-[#B88619] font-[family-name:var(--font-playfair)]">
+                {stat.value}
+              </div>
+              <div className="text-white/70 text-xs">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
         {/* Mini Features - Hidden on mobile */}
-        <div className="hidden md:grid md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="hidden md:grid md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
           {[
             { icon: Shield, text: "İslami Usullere Uygun" },
             { icon: Truck, text: "Aynı Gün Teslimat" },
@@ -59,6 +77,21 @@ export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
             <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
               <item.icon size={24} className="mx-auto mb-2" />
               <span className="text-sm font-medium">{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats - Web: After mini features */}
+        <div className="hidden md:flex justify-center gap-12">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <stat.icon size={20} className="text-[#B88619]" />
+                <span className="text-3xl font-bold text-white font-[family-name:var(--font-playfair)]">
+                  {stat.value}
+                </span>
+              </div>
+              <div className="text-white/70 text-sm">{stat.label}</div>
             </div>
           ))}
         </div>

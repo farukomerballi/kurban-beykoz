@@ -6,7 +6,6 @@ import { Hero } from './sections/Hero';
 import { Products } from './sections/Products';
 import { Features } from './sections/Features';
 import { Process } from './sections/Process';
-import { Stats } from './sections/Stats';
 import { FAQ } from './sections/FAQ';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
@@ -46,8 +45,6 @@ export default function Home() {
         whatsapp={config.contact.whatsapp}
         workingHours={config.workingHours}
       />
-      
-      <Stats />
       
       <Products 
         products={config.products}
