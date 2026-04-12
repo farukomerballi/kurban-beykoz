@@ -1,5 +1,6 @@
 import { Product } from '../types/config';
 import { ProductCard } from '../components/ProductCard';
+import Image from 'next/image';
 
 interface ProductsProps {
   products: Product[];
@@ -18,6 +19,19 @@ export function Products({ products, whatsapp }: ProductsProps) {
             Hijyenik koşullarda, İslami usullere uygun kesim hizmeti.
             Fiyatlarımıza kesim, parçalama ve paketleme dahildir.
           </p>
+        </div>
+
+        {/* Büyükbaş Kurbanlık Görseli */}
+        <div className="mb-12 flex justify-center">
+          <div className="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/buyukbas.png"
+              alt="Büyükbaş Kurbanlık"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
