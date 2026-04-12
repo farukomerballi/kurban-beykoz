@@ -21,12 +21,21 @@ export function Products({ products, whatsapp }: ProductsProps) {
           </p>
         </div>
 
-        {/* Büyükbaş Kurbanlık Görseli */}
-        <div className="mb-12 flex justify-center">
-          <div className="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
+        {/* Kurbanlık Görselleri - Yan Yana */}
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/images/buyukbas.png"
               alt="Büyükbaş Kurbanlık"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/kucukbas.png"
+              alt="Küçükbaş Kurbanlık"
               fill
               className="object-cover"
               priority
