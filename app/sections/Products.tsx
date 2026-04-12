@@ -1,14 +1,11 @@
-import { Product } from '../types/config';
-import { ProductCard } from '../components/ProductCard';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import Image from 'next/image';
 
 interface ProductsProps {
-  products: Product[];
   whatsapp: string;
 }
 
-export function Products({ products, whatsapp }: ProductsProps) {
+export function Products({ whatsapp }: ProductsProps) {
   const kurbanliklar = [
     {
       image: "/images/buyukbas.png",
@@ -36,7 +33,7 @@ export function Products({ products, whatsapp }: ProductsProps) {
         </div>
 
         {/* Kurbanlık Kartları - Yan Yana */}
-        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {kurbanliklar.map((item, index) => (
             <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-xl">
               <div className="relative aspect-video">
@@ -57,12 +54,6 @@ export function Products({ products, whatsapp }: ProductsProps) {
                 </WhatsAppButton>
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} whatsappNumber={whatsapp} />
           ))}
         </div>
       </div>

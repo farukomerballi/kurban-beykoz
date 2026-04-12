@@ -47,7 +47,6 @@ export default function Home() {
       />
       
       <Products 
-        products={config.products}
         whatsapp={config.contact.whatsapp}
       />
       
