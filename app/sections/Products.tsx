@@ -1,5 +1,6 @@
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import Image from 'next/image';
+import { Beef, Rabbit } from 'lucide-react';
 
 interface ProductsProps {
   whatsapp: string;
@@ -45,7 +46,13 @@ export function Products({ whatsapp }: ProductsProps) {
                   priority
                 />
                 {/* Logo overlay - sağ alt köşe */}
-                <div className="absolute bottom-0 right-0 w-32 h-20 bg-gradient-to-tl from-white via-white/80 to-transparent" />
+                <div className="absolute bottom-3 right-3 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                  {index === 0 ? (
+                    <Beef className="w-6 h-6 text-[#253D10]" />
+                  ) : (
+                    <Rabbit className="w-6 h-6 text-[#253D10]" />
+                  )}
+                </div>
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
