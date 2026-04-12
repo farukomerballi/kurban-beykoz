@@ -1,0 +1,79 @@
+{
+  "site": {
+    "title": "Beykoz Kurban",
+    "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. Hijyenik koşullarda, profesyonel ekiple kurban kesimi.",
+    "keywords": "beykoz kurban, kurban kesim, kurbanlık, istanbul kurban, kurban bayramı"
+  },
+  "contact": {
+    "phone": "05XX XXX XX XX",
+    "whatsapp": "905XXXXXXXXX",
+    "address": "Beykoz, İstanbul",
+    "mapsUrl": "https://maps.google.com/?q=Beykoz,Istanbul"
+  },
+  "workingHours": {
+    "weekdays": "08:00 - 19:00",
+    "weekend": "08:00 - 19:00"
+  },
+  "products": [
+    {
+      "id": "buyukbas-2026",
+      "type": "Büyükbaş Kurban",
+      "price": "35.000 ₺",
+      "image": "/images/buyukbas.jpg",
+      "features": ["7 Hisse", "Aynı Gün Teslim", "Vakumlu Paketleme", "Profesyonel Kesim"]
+    },
+    {
+      "id": "kucukbas-2026",
+      "type": "Küçükbaş Kurban",
+      "price": "8.000 ₺",
+      "image": "/images/kucukbas.jpg",
+      "features": ["Tam Hisse", "Aynı Gün Teslim", "Vakumlu Paketleme", "Hijyenik Ortam"]
+    }
+  ],
+  "features": [
+    {
+      "icon": "mosque",
+      "title": "İslami Usullere Uygun",
+      "description": "Kurbanınızı size vekâleten ibadet hassasiyeti ile tüm fıkıh kurallarına riayet ederek kesiyoruz."
+    },
+    {
+      "icon": "shield",
+      "title": "Hijyenik & Güvenli",
+      "description": "Yüksek hijyen standartlarında, modern tesislerde kesim yapıyoruz."
+    },
+    {
+      "icon": "truck",
+      "title": "Aynı Gün Teslimat",
+      "description": "Profesyonel kasap kadrosu ile kesimden hemen sonra teslimat."
+    },
+    {
+      "icon": "scale",
+      "title": "Hassas Hisse Payı",
+      "description": "Elektronik tartılar ile eşit ve adil hisseleme."
+    }
+  ],
+  "process": [
+    { "step": 1, "title": "Kayıt", "description": "Hissenizi ayırtmak için iletişime geçin" },
+    { "step": 2, "title": "Seçim", "description": "Kurbanlığınızı birlikte seçelim" },
+    { "step": 3, "title": "Kesim", "description": "İslami usullere göre kesim" },
+    { "step": 4, "title": "Teslimat", "description": "Aynı gün hijyenik teslimat" }
+  ],
+  "faq": [
+    {
+      "question": "Kurbanlık seçimi nasıl yapılıyor?",
+      "answer": "Bayramdan önce tesisimizi ziyaret ederek canlı kurbanlıklarımızı görebilirsiniz. Uzman ekibimiz size en uygun kurbanlığı seçmenizde yardımcı olur."
+    },
+    {
+      "question": "Etler nasıl paketleniyor?",
+      "answer": "Kıyma, kuşbaşı, lop et, incik ve but olarak ayrı ayrı vakumlu paketleme yapıyoruz. Her paket üzerine isim etiketi yapıştırıyoruz."
+    },
+    {
+      "question": "Kesim günü ne zaman yapılıyor?",
+      "answer": "Kurban Bayramı'nın 1. günü sabah namazından itibaren kesimlere başlıyoruz. Kayıt sırasına göre kesim yapılıyor."
+    },
+    {
+      "question": "Teslimat nasıl oluyor?",
+      "answer": "Kesim yapıldıktan sonra aynı gün içinde soğuk hava frigolu araçlarımızla adresinize teslimat yapıyoruz."
+    }
+  ]
+}
