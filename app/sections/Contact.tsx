@@ -13,11 +13,11 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
   return (
     <section id="contact" className="py-20 bg-[#FBF6EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
             Bize Ulaşın
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-lg">
             Sorularınız için bizi arayabilir veya WhatsApp'tan yazabilirsiniz.
           </p>
         </div>
@@ -25,7 +25,7 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="bg-[#F2E8D0] rounded-xl p-6">
+            <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center">
                   <Phone className="text-white" size={24} />
@@ -42,7 +42,7 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
               </WhatsAppButton>
             </div>
 
-            <div className="bg-[#F2E8D0] rounded-xl p-6">
+            <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="text-white" size={24} />
@@ -54,7 +54,7 @@ export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: Con
               </div>
             </div>
 
-            <div className="bg-[#F2E8D0] rounded-xl p-6">
+            <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center flex-shrink-0">
                   <Clock className="text-white" size={24} />
