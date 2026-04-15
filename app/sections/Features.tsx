@@ -107,7 +107,7 @@ export function Features({ stats, whyFeatures }: FeaturesProps) {
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-5"
               style={{ background: 'rgba(29,106,101,0.1)', color: '#1D6A65' }}
             >
-              Fark Yaratan Özellikler
+              Farkımız
             </span>
             <div className="flex flex-col gap-4 mt-4">
               {whyFeatures.map((feature, index) => {
