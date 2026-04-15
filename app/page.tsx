@@ -3,9 +3,10 @@
 import { useConfig } from './hooks/useConfig';
 import { Header } from './sections/Header';
 import { Hero } from './sections/Hero';
+import { Hizmetler } from './sections/Hizmetler';
 import { Products } from './sections/Products';
-import { Features } from './sections/Features';
 import { Process } from './sections/Process';
+import { Features } from './sections/Features';
 import { FAQ } from './sections/FAQ';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
@@ -16,17 +17,17 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#253D10]" />
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F9F6F1' }}>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1D6A65]" />
       </div>
     );
   }
 
   if (error || !config) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F9F6F1' }}>
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-2">Hata</h1>
+          <h1 className="text-2xl font-bold mb-2" style={{ color: '#B91C1C' }}>Hata</h1>
           <p className="text-gray-600">Sayfa yüklenirken bir sorun oluştu.</p>
         </div>
       </div>
@@ -35,37 +36,44 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <Header 
-        phone={config.contact.phone} 
-        whatsapp={config.contact.whatsapp} 
+      <Header
+        phone={config.contact.phone}
+        whatsapp={config.contact.whatsapp}
       />
-      
-      <Hero 
+
+      <Hero
         phone={config.contact.phone}
         whatsapp={config.contact.whatsapp}
         workingHours={config.workingHours}
       />
-      
-      <Products 
+
+      <Hizmetler
+        services={config.services}
         whatsapp={config.contact.whatsapp}
       />
-      
-      <Features features={config.features} />
-      
-      <Process />
-      
+
+      <Process
+        steps={config.steps}
+        deliveryTimeline={config.deliveryTimeline}
+      />
+
+      <Features
+        stats={config.stats}
+        whyFeatures={config.whyFeatures}
+      />
+
       <FAQ faqs={config.faq} />
-      
-      <Contact 
+
+      <Contact
         phone={config.contact.phone}
         whatsapp={config.contact.whatsapp}
         address={config.contact.address}
         mapsUrl={config.contact.mapsUrl}
         workingHours={config.workingHours}
       />
-      
+
       <Footer />
-      
+
       <FloatingWhatsAppButton phone={config.contact.whatsapp} />
     </main>
   );

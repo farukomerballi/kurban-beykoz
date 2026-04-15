@@ -1,110 +1,261 @@
-import { Phone, Clock, Shield, Truck, Award, Package, Users } from 'lucide-react';
-
 interface HeroProps {
   phone: string;
   whatsapp: string;
   workingHours: { weekdays: string; weekend: string };
 }
 
-export function Hero({ phone, whatsapp, workingHours }: HeroProps) {
-  const stats = [
-    { icon: Award, value: "20+", label: "Yıllık Tecrübe" },
-    { icon: Package, value: "5 Yıllık", label: "Paket Hizmeti" },
-    { icon: Users, value: "60+", label: "Personel" },
-  ];
-
+export function Hero({ phone, whatsapp }: HeroProps) {
   return (
-    <section id="hero" className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center pt-20 pb-8 md:pb-0">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#253D10] via-[#3a5a20] to-[#2d4a15]" />
-      
-      {/* Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoLTJ2NGgyem0tNiA2di0yaC00djJoNHptMC02di00aC00djRoNHptLTYgNnYtMmgtNHYyaDR6bTAtNnYtNGgtNHY0aDR6Ii8+PC9nPjwvZz48L3N2Zz4=')]" />
+    <section
+      id="hero"
+      className="relative min-h-screen pt-[68px] overflow-hidden"
+      style={{ background: 'var(--cream, #F9F6F1)' }}
+    >
+      {/* Decorative radial swirl top-right */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: '-120px',
+          right: '-120px',
+          width: '700px',
+          height: '700px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(46,158,151,0.12) 0%, transparent 70%)',
+        }}
+      />
+      {/* Decorative radial swirl bottom-left */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: '-80px',
+          left: '-80px',
+          width: '500px',
+          height: '500px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(185,28,28,0.08) 0%, transparent 70%)',
+        }}
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Beykoz&apos;da Güvenilir<br />
-          <span className="text-[#B88619]">Kurban Hizmeti</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-          İslami usullere uygun, hijyenik koşullarda kurban kesim hizmeti.
-          <br className="hidden md:block" />
-          Profesyonel ekibimizle yanınızdayız.
-        </p>
-
-        {/* Working Hours Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-8">
-          <Clock size={18} />
-          <span>Çalışma Saatlerimiz: {workingHours.weekdays}</span>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a 
-            href={`https://wa.me/${whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold text-lg py-4 px-8 rounded-lg hover:bg-[#128C7E] transition-colors"
+      <div className="relative z-10 grid lg:grid-cols-2 min-h-[calc(100vh-68px)]">
+        {/* LEFT CONTENT */}
+        <div className="flex flex-col justify-center px-6 sm:px-8 lg:pl-[8vw] lg:pr-[4vw] py-12 lg:py-20">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit mb-6 text-white text-xs font-bold tracking-widest uppercase"
+            style={{ background: '#1D6A65' }}
           >
-            WhatsApp&apos;tan Bilgi Al
-          </a>
-          <a 
-            href={`tel:${phone}`}
-            className="inline-flex items-center gap-2 bg-white text-[#253D10] hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors"
-          >
-            <Phone size={20} />
-            Bizi Arayın
-          </a>
-        </div>
+            <span>🌙</span>
+            <span>Kurbanla Yakınlaş!</span>
+          </div>
 
-        {/* Stats - Mobile: After buttons, Web: After mini features */}
-        <div className="md:hidden flex justify-center gap-6 mb-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl font-bold text-[#B88619] font-[family-name:var(--font-playfair)]">
-                {stat.value}
+          <p
+            className="text-sm font-bold tracking-[0.25em] uppercase mb-2"
+            style={{ color: '#1D6A65', fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+          >
+            Beykoz
+          </p>
+
+          <h1
+            className="leading-none tracking-tight mb-3"
+            style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+          >
+            <span
+              className="block text-5xl sm:text-6xl lg:text-[5.5rem] font-black"
+              style={{ color: '#7F1D1D' }}
+            >
+              KURBAN
+            </span>
+            <span
+              className="block text-2xl sm:text-3xl lg:text-[2.8rem] font-extrabold mt-1"
+              style={{ color: '#1D6A65' }}
+            >
+              Organizasyonu
+            </span>
+          </h1>
+
+          <p
+            className="text-lg font-bold px-4 py-2.5 rounded-r-lg rounded-l-none lg:rounded-lg w-fit mb-6"
+            style={{
+              color: '#B91C1C',
+              background: 'rgba(185,28,28,0.08)',
+              borderLeft: '4px solid #B91C1C',
+            }}
+          >
+            Kurbanını Erteleme — Hemen Kayıt Ol!
+          </p>
+
+          <p className="text-base leading-7 max-w-md mb-8" style={{ color: '#444' }}>
+            Yıl içinde{' '}
+            <strong style={{ color: '#1D6A65', fontWeight: 700 }}>
+              Adak, Akika, Şifa, Şükür, Nafile
+            </strong>{' '}
+            kurbanlarınız kesilerek talebelerimize ikram edilir. İslami ve hijyenik kesim
+            güvencesiyle, her bütçeye uygun seçeneklerle yanınızdayız.
+          </p>
+
+          <div className="flex flex-wrap gap-3 mb-8">
+            {[
+              { icon: '✅', text: '20+ Yıl Tecrübe' },
+              { icon: '🕌', text: 'İslami Kesim' },
+              { icon: '🚚', text: '1. Gün Teslim' },
+              { icon: '📋', text: 'Süreç Takibi' },
+            ].map((chip, idx) => (
+              <div
+                key={idx}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border"
+                style={{
+                  background: '#fff',
+                  borderColor: 'rgba(0,0,0,0.08)',
+                  color: '#1D6A65',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+                }}
+              >
+                <span className="text-base">{chip.icon}</span>
+                <span>{chip.text}</span>
               </div>
-              <div className="text-white/70 text-xs">{stat.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-4 mb-8">
+            <a
+              href={`tel:${phone}`}
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-extrabold text-base transition-all hover:-translate-y-0.5"
+              style={{
+                background: '#B91C1C',
+                fontFamily: 'var(--font-montserrat), Montserrat, sans-serif',
+                boxShadow: '0 4px 20px rgba(185,28,28,0.35)',
+              }}
+            >
+              <span>📞</span>
+              <span>Hemen Kayıt Ol</span>
+            </a>
+            <a
+              href={`https://wa.me/${whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-base transition-all border-2"
+              style={{
+                background: 'transparent',
+                color: '#1D6A65',
+                borderColor: '#1D6A65',
+                fontFamily: 'var(--font-montserrat), Montserrat, sans-serif',
+              }}
+            >
+              <span>Detaylı Bilgi →</span>
+            </a>
+          </div>
+
         </div>
 
-        {/* Mini Features - Hidden on mobile */}
-        <div className="hidden md:grid md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-          {[
-            { icon: Shield, text: "İslami Usullere Uygun" },
-            { icon: Truck, text: "Aynı Gün Teslimat" },
-            { icon: Clock, text: "Hızlı Hizmet" },
-            { icon: Shield, text: "Hijyenik Ortam" },
-          ].map((item, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
-              <item.icon size={24} className="mx-auto mb-2" />
-              <span className="text-sm font-medium">{item.text}</span>
-            </div>
-          ))}
-        </div>
+        {/* RIGHT VISUAL CARD */}
+        <div className="flex items-center justify-center px-6 sm:px-8 lg:pl-4 lg:pr-[5vw] py-12 lg:py-20">
+          <div
+            className="relative w-full max-w-md rounded-[32px] p-6 sm:p-8 overflow-hidden"
+            style={{
+              background: '#fff',
+              boxShadow: '0 24px 60px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* Top gradient bar */}
+            <div
+              className="absolute top-0 left-0 right-0 h-1.5"
+              style={{ background: 'linear-gradient(90deg, #B91C1C, #1D6A65)' }}
+            />
 
-        {/* Stats - Web: After mini features */}
-        <div className="hidden md:flex justify-center gap-12">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <stat.icon size={20} className="text-[#B88619]" />
-                <span className="text-3xl font-bold text-white font-[family-name:var(--font-playfair)]">
-                  {stat.value}
+            <div className="flex justify-between items-start mb-6 mt-1">
+              <span
+                className="px-3 py-1 rounded-full text-xs font-extrabold tracking-wide text-white"
+                style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', background: '#B91C1C' }}
+              >
+                🌙 Kurban Hizmetleri
+              </span>
+              <span
+                className="text-xs font-bold tracking-widest uppercase"
+                style={{ color: '#999' }}
+              >
+                20+ Yıllık Tecrübe
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 mb-5">
+              {[
+                { emoji: '🐄', name: 'Büyükbaş', price: 'Bütçeye Uygun' },
+                { emoji: '🐑', name: 'Küçükbaş', price: 'Her Bütçe' },
+                { emoji: '🐐', name: 'Keçi', price: 'Uygun Fiyat' },
+              ].map((animal, idx) => (
+                <div
+                  key={idx}
+                  className="text-center rounded-2xl p-3 transition-all cursor-default border-[1.5px] border-transparent hover:border-[#1D6A65] hover:-translate-y-0.5"
+                  style={{ background: '#F9F6F1' }}
+                >
+                  <span className="block text-3xl mb-1">{animal.emoji}</span>
+                  <span
+                    className="block text-sm font-bold"
+                    style={{ color: '#1D6A65' }}
+                  >
+                    {animal.name}
+                  </span>
+                  <span className="block text-xs" style={{ color: '#888' }}>
+                    {animal.price}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div
+              className="flex items-center gap-3 rounded-xl px-4 py-3 mb-4 text-white"
+              style={{ background: 'linear-gradient(135deg, #1D6A65, #2E9E97)' }}
+            >
+              <span className="text-2xl shrink-0">🚀</span>
+              <div>
+                <div className="text-sm font-bold leading-tight">1. Gün Teslim Garantisi</div>
+                <div className="text-xs opacity-85">
+                  Bayramın ilk günü evinize taze teslimat
+                </div>
+              </div>
+            </div>
+
+            <div className="h-px bg-black/5 my-4" />
+
+            <p
+              className="text-xs font-bold tracking-widest uppercase mb-3"
+              style={{ color: '#888' }}
+            >
+              Kurban Türleri
+            </p>
+            <div className="flex flex-wrap gap-2 mb-5">
+              {['Adak', 'Akika', 'Şifa', 'Şükür', 'Nafile', 'Kurban'].map((type, idx) => (
+                <span
+                  key={idx}
+                  className="px-2.5 py-1 rounded-full text-xs font-bold"
+                  style={{ background: 'rgba(46,158,151,0.1)', color: '#1D6A65' }}
+                >
+                  {type}
                 </span>
-              </div>
-              <div className="text-white/70 text-sm">{stat.label}</div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Scroll Indicator - Hidden on mobile */}
-      <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-white/50 rounded-full" />
+            <div className="flex items-center justify-between mt-2">
+              <div className="text-xs font-semibold" style={{ color: '#888' }}>
+                <strong
+                  className="text-base"
+                  style={{ color: '#B91C1C', fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+                >
+                  20
+                </strong>{' '}
+                Yılı Aşkın
+                <br />
+                Kurban Tecrübesi
+              </div>
+              <div className="text-right">
+                <div className="text-xs font-semibold" style={{ color: '#888' }}>
+                  Kapak Kontrolü
+                </div>
+                <div className="text-xs font-bold" style={{ color: '#1D6A65' }}>
+                  ✓ Hijyenik Ortam
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

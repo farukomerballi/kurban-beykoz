@@ -18,6 +18,11 @@ export interface SiteConfig {
   features: Feature[];
   process: ProcessStep[];
   faq: FAQ[];
+  stats: Stat[];
+  services: Service[];
+  steps: Step[];
+  deliveryTimeline: TimelineItem[];
+  whyFeatures: WhyFeature[];
 }
 
 export interface Product {
@@ -43,4 +48,38 @@ export interface ProcessStep {
 export interface FAQ {
   question: string;
   answer: string;
+}
+
+export interface Stat {
+  number: string;
+  label: string;
+  variant: 'default' | 'accent' | 'accent-red';
+}
+
+export interface Service {
+  emoji: string;
+  title: string;
+  description: string;
+  tag: string;
+  featured: boolean;
+}
+
+export interface Step {
+  step: number;
+  title: string;
+  description: string;
+  color: 'red' | 'teal';
+}
+
+export interface TimelineItem {
+  day: string;
+  dotColor: 'red' | 'teal' | 'gray';
+  text: string;
+}
+
+export interface WhyFeature {
+  icon: string;
+  title: string;
+  description: string;
+  iconVariant: 'default' | 'red';
 }

@@ -2,14 +2,20 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#253D10] text-white py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-center">
-          <p className="text-white/80 text-sm">
-            &copy; {currentYear} Beykoz Kurban. Tüm Hakları Saklıdır.
-          </p>
-        </div>
+    <footer
+      className="flex flex-wrap items-center justify-between gap-4 px-4 sm:px-6 lg:px-[8vw] py-8"
+      style={{ background: '#1a1a1a', color: 'rgba(255,255,255,0.6)' }}
+    >
+      <div
+        className="text-base font-black tracking-tight"
+        style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#fff' }}
+      >
+        BEYKOZ{' '}
+        <span style={{ color: '#2E9E97' }}>Kurban Organizasyonu</span>
       </div>
+      <small className="text-xs">
+        © {currentYear} Beykoz Kurban Organizasyonu — Tüm hakları saklıdır.
+      </small>
     </footer>
   );
 }

@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface ContactProps {
   phone: string;
@@ -8,82 +8,83 @@ interface ContactProps {
   workingHours: { weekdays: string; weekend: string };
 }
 
-export function Contact({ phone, whatsapp, address, mapsUrl, workingHours }: ContactProps) {
-  return (
-    <section id="contact" className="py-20 bg-[#FBF6EC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
-            Bize Ulaşın
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Sorularınız için bizi arayabilir veya WhatsApp&apos;tan yazabilirsiniz.
-          </p>
-        </div>
+export function Contact({ phone, whatsapp }: ContactProps) {
+  const { ref, isVisible } = useScrollReveal();
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center">
-                  <Phone className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#2C3E50]">Telefon</h3>
-                  <a href={`tel:${phone}`} className="text-[#253D10] hover:text-[#3a5a20] text-lg font-semibold">
-                    {phone}
-                  </a>
-                </div>
-              </div>
-              <a 
-                href={`https://wa.me/${whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#128C7E] transition-colors w-full"
+  return (
+    <section id="iletisim" className="py-20 lg:py-24" style={{ background: '#fff' }}>
+      <div className="px-4 sm:px-6 lg:px-[8vw]">
+        <div
+          ref={ref}
+          className={`reveal ${isVisible ? 'visible' : ''}`}
+        >
+          <div
+            className="relative rounded-[32px] p-8 lg:p-14 overflow-hidden grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center max-w-6xl mx-auto"
+            style={{
+              background: 'linear-gradient(135deg, #7F1D1D 0%, #B91C1C 45%, #1D6A65 100%)',
+            }}
+          >
+            {/* Decorative moon */}
+            <div
+              className="absolute pointer-events-none select-none hidden lg:block"
+              style={{
+                right: '280px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                fontSize: '9rem',
+                opacity: 0.06,
+              }}
+            >
+              🌙
+            </div>
+
+            <div className="relative z-10">
+              <div
+                className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
+                style={{ color: 'rgba(255,255,255,0.7)' }}
               >
-                WhatsApp&apos;tan Yaz
+                Kurban Danışmanlığı
+              </div>
+              <h2
+                className="text-2xl md:text-3xl lg:text-[2.4rem] font-black tracking-tight leading-tight mb-3 text-white"
+                style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+              >
+                Kurbanını Erteleme,
+                <br />
+                Hemen Kayıt Ol!
+              </h2>
+              <p className="text-sm lg:text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                20 yılı aşkın tecrübemiz ve binlerce memnun ailemizle bu yıl da yanınızdayız. Kontenjanlar dolmadan yerinizi ayırtın.
+              </p>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center gap-3 shrink-0">
+              <div
+                className="text-xs font-semibold tracking-widest uppercase text-center"
+                style={{ color: 'rgba(255,255,255,0.65)' }}
+              >
+                Hemen Arayın
+              </div>
+              <div
+                className="text-xl md:text-2xl lg:text-[2rem] font-black tracking-wide text-white whitespace-nowrap"
+                style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+              >
+                {phone}
+              </div>
+              <a
+                href={`tel:${phone}`}
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-extrabold text-base transition-all hover:-translate-y-0.5 whitespace-nowrap mt-1"
+                style={{
+                  background: '#fff',
+                  color: '#B91C1C',
+                  fontFamily: 'var(--font-montserrat), Montserrat, sans-serif',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+                }}
+              >
+                <span>📞</span>
+                <span>Şimdi Ara</span>
               </a>
             </div>
-
-            <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#2C3E50] mb-1">Adres</h3>
-                  <p className="text-gray-600">{address}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#F2E8D0] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#253D10] rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#2C3E50] mb-1">Çalışma Saatleri</h3>
-                  <p className="text-gray-600">Hafta içi: {workingHours.weekdays}</p>
-                  <p className="text-gray-600">Hafta sonu: {workingHours.weekend}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Map */}
-          <div className="h-96 md:h-auto bg-gray-200 rounded-xl overflow-hidden">
-            <iframe
-              src={mapsUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-            />
           </div>
         </div>
       </div>

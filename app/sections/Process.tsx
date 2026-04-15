@@ -1,122 +1,176 @@
-import { ClipboardList, Search, Scissors, Phone, Truck } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
-interface ProcessStepProps {
+interface Step {
   step: number;
   title: string;
   description: string;
-  icon: React.ReactNode;
-  isLast?: boolean;
+  color: 'red' | 'teal';
 }
 
-function ProcessStep({ step, title, description, icon, isLast = false }: ProcessStepProps) {
+interface TimelineItem {
+  day: string;
+  dotColor: 'red' | 'teal' | 'gray';
+  text: string;
+}
+
+interface ProcessProps {
+  steps: Step[];
+  deliveryTimeline: TimelineItem[];
+}
+
+function StepCard({ step, delayClass }: { step: Step; delayClass: string }) {
+  const { ref, isVisible } = useScrollReveal();
+  const isTeal = step.color === 'teal';
+
   return (
-    <div className="flex items-start gap-6 relative">
-      {/* Connection Line */}
-      {!isLast && (
-        <div className="absolute left-8 top-16 w-0.5 h-24 bg-gradient-to-b from-[#B88619] to-[#B88619]/30" />
-      )}
-      
-      {/* Step Number & Icon Circle */}
-      <div className="relative flex-shrink-0">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#253D10] to-[#3a5a20] flex items-center justify-center shadow-lg shadow-[#253D10]/20">
-          <span className="text-white text-xl font-bold">{step}</span>
+    <div
+      ref={ref}
+      className={`flex gap-5 relative pb-8 reveal ${delayClass} ${isVisible ? 'visible' : ''}`}
+    >
+      <div className="flex flex-col items-center shrink-0">
+        <div
+          className="w-12 h-12 rounded-full flex items-center justify-center text-white text-lg font-black z-10"
+          style={{
+            background: isTeal ? '#1D6A65' : '#B91C1C',
+            fontFamily: 'var(--font-montserrat), Montserrat, sans-serif',
+            boxShadow: isTeal
+              ? '0 4px 16px rgba(29,106,101,0.3)'
+              : '0 4px 16px rgba(185,28,28,0.3)',
+          }}
+        >
+          {step.step}
         </div>
-        <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-[#B88619] flex items-center justify-center shadow-md">
-          {icon}
-        </div>
+        <div
+          className="w-0.5 flex-1 mt-1.5 min-h-[32px]"
+          style={{
+            background: 'linear-gradient(to bottom, #B91C1C, #1D6A65)',
+            opacity: 0.2,
+          }}
+        />
       </div>
-      
-      {/* Content */}
-      <div className="pt-2 pb-8 flex-1">
-        <h3 className="text-2xl font-bold text-[#253D10] mb-2 font-[family-name:var(--font-playfair)]">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
+
+      <div className="pt-2">
+        <h3
+          className="text-base font-extrabold mb-1"
+          style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
+        >
+          {step.title}
+        </h3>
+        <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
       </div>
     </div>
   );
 }
 
-export function Process() {
-  const steps = [
-    {
-      step: 1,
-      title: "Kayıt",
-      description: "Hissenizi ayırtmak için Beykoz Kurban ile iletişime geçmeniz yeterlidir. Kayıt işleminiz hızlı ve kolay şekilde tamamlanır.",
-      icon: <ClipboardList size={16} className="text-white" />
-    },
-    {
-      step: 2,
-      title: "Seçim",
-      description: "Kurbanlıklar, görevli uzman ekibimiz tarafından İslami şartlara uygun ve titizlikle seçilir.",
-      icon: <Search size={16} className="text-white" />
-    },
-    {
-      step: 3,
-      title: "Kesim",
-      description: "Bayramın 1. günü kurbanlarınız, ehil kasaplarımız tarafından İslami usullere göre kesilir.",
-      icon: <Scissors size={16} className="text-white" />
-    },
-    {
-      step: 4,
-      title: "Bilgi",
-      description: "Kurbanınızın kesim ve teslimat aşamasında size telefon ile bilgi verilir. Böylece sürecin her adımından haberdar olursunuz.",
-      icon: <Phone size={16} className="text-white" />
-    },
-    {
-      step: 5,
-      title: "Teslimat",
-      description: "Kurban etleri eşit şekilde bölünerek aynı gün içinde hisse sahiplerine teslim edilir.",
-      icon: <Truck size={16} className="text-white" />
-    }
-  ];
+export function Process({ steps, deliveryTimeline }: ProcessProps) {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+  const { ref: cardRef, isVisible: cardVisible } = useScrollReveal();
+
+  const dotColors = {
+    red: '#B91C1C',
+    teal: '#1D6A65',
+    gray: '#ccc',
+  };
 
   return (
-    <section id="process" className="py-24 bg-[#FBF6EC]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
-            5 Adımda Kurban
+    <section
+      id="nasil-calisir"
+      className="py-20 lg:py-24"
+      style={{ background: '#F9F6F1' }}
+    >
+      <div className="px-4 sm:px-6 lg:px-[8vw]">
+        <div
+          ref={headerRef}
+          className={`text-center mb-14 reveal ${headerVisible ? 'visible' : ''}`}
+        >
+          <span
+            className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-4"
+            style={{ background: 'rgba(29,106,101,0.1)', color: '#1D6A65' }}
+          >
+            Süreç
+          </span>
+          <h2
+            className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
+            style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
+          >
+            Nasıl <span style={{ color: '#B91C1C' }}>Çalışır?</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Kurban ibadetinizde vekaletinizi verin, gerisini bize bırakın. Hijyenik şartlarda, kesimden parçalamaya her aşamayı sizler için organize ediyoruz.
+          <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+            Kayıttan teslimata kadar her adımı takip edebilir, gönül rahatlığıyla kurbanınızı bize emanet edebilirsiniz.
           </p>
         </div>
 
-        {/* Desktop: Horizontal Timeline - Hidden on mobile */}
-        <div className="hidden md:grid md:grid-cols-5 gap-8 relative">
-          {/* Desktop: Horizontal Timeline */}
-          <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-[#B88619]/20 via-[#B88619] to-[#B88619]/20" />
-          
-          {steps.map((item, index) => (
-            <div key={item.step} className="relative text-center">
-              {/* Step Circle */}
-              <div className="relative inline-block mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#253D10] to-[#3a5a20] flex items-center justify-center shadow-lg shadow-[#253D10]/20 relative z-10">
-                  <span className="text-white text-2xl font-bold">{item.step}</span>
-                </div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-[#B88619] flex items-center justify-center shadow-md z-20">
-                  {item.icon}
-                </div>
-              </div>
-              
-              {/* Content */}
-              <h3 className="text-xl font-bold text-[#253D10] mb-3 font-[family-name:var(--font-playfair)]">{item.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto items-center">
+          {/* Steps list */}
+          <div className="flex flex-col">
+            {steps.map((step, index) => {
+              const delayClass =
+                index === 0
+                  ? 'reveal-delay-1'
+                  : index === 1
+                  ? 'reveal-delay-2'
+                  : index === 2
+                  ? 'reveal-delay-3'
+                  : 'reveal-delay-4';
+              return <StepCard key={step.step} step={step} delayClass={delayClass} />;
+            })}
+          </div>
 
-        {/* Mobile: Vertical Timeline */}
-        <div className="md:hidden mt-12 max-w-md mx-auto">
-          {steps.map((item, index) => (
-            <ProcessStep
-              key={item.step}
-              step={item.step}
-              title={item.title}
-              description={item.description}
-              icon={item.icon}
-              isLast={index === steps.length - 1}
-            />
-          ))}
+          {/* Right card */}
+          <div
+            ref={cardRef}
+            className={`reveal reveal-delay-2 ${cardVisible ? 'visible' : ''}`}
+          >
+            <div
+              className="relative rounded-[28px] p-6 lg:p-8 overflow-hidden"
+              style={{ background: '#fff', boxShadow: '0 20px 60px rgba(0,0,0,0.09)' }}
+            >
+              <div
+                className="absolute top-0 left-0 right-0 h-1"
+                style={{ background: 'linear-gradient(90deg, #1D6A65, #B91C1C)' }}
+              />
+
+              <h3
+                className="text-xl font-black mb-6 mt-1"
+                style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
+              >
+                Bayram Günü <span style={{ color: '#1D6A65' }}>Teslimat Takvimi</span>
+              </h3>
+
+              <div className="space-y-0">
+                {deliveryTimeline.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 py-3 border-b border-black/5 last:border-b-0"
+                  >
+                    <span
+                      className="text-xs font-black tracking-widest uppercase shrink-0 w-14"
+                      style={{ color: '#B91C1C', fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+                    >
+                      {item.day}
+                    </span>
+                    <span
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ background: dotColors[item.dotColor] }}
+                    />
+                    <span className="text-sm font-semibold text-gray-700">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                className="mt-6 rounded-xl px-4 py-3 flex items-center gap-3"
+                style={{ background: '#F9F6F1' }}
+              >
+                <span className="text-2xl">📲</span>
+                <p className="text-sm font-semibold text-gray-600 leading-snug">
+                  Her aşamada{' '}
+                  <strong style={{ color: '#1D6A65' }}>SMS & WhatsApp</strong>{' '}
+                  bildirimi gönderilir. Kurbanınızı anında takip edin.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

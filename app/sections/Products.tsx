@@ -8,23 +8,32 @@ interface ProductsProps {
 export function Products({ whatsapp }: ProductsProps) {
   const kurbanliklar = [
     {
-      image: "/images/buyukbas.png",
-      title: "Büyükbaş Kurbanlık",
-      alt: "Büyükbaş Kurbanlık"
+      image: '/images/buyukbas.png',
+      title: 'Büyükbaş Kurbanlık',
+      alt: 'Büyükbaş Kurbanlık',
     },
     {
-      image: "/images/kucukbas.png",
-      title: "Küçükbaş Kurbanlık",
-      alt: "Küçükbaş Kurbanlık"
-    }
+      image: '/images/kucukbas.png',
+      title: 'Küçükbaş Kurbanlık',
+      alt: 'Küçükbaş Kurbanlık',
+    },
   ];
 
   return (
-    <section id="products" className="py-20 bg-[#FBF6EC]">
+    <section id="products" className="py-20 lg:py-24" style={{ background: '#F9F6F1' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
-            2026 Kurbanlık Fiyatları
+        <div className="text-center mb-14">
+          <span
+            className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-4"
+            style={{ background: 'rgba(29,106,101,0.1)', color: '#1D6A65' }}
+          >
+            Kurbanlıklarımız
+          </span>
+          <h2
+            className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
+            style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
+          >
+            2026 Kurbanlık <span style={{ color: '#B91C1C' }}>Fiyatları</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Hijyenik koşullarda, İslami usullere uygun kesim hizmeti.
@@ -32,10 +41,13 @@ export function Products({ whatsapp }: ProductsProps) {
           </p>
         </div>
 
-        {/* Kurbanlık Kartları - Yan Yana */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {kurbanliklar.map((item, index) => (
-            <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-[#B88619]/30 hover:shadow-[0_0_30px_rgba(184,134,25,0.15)]">
+            <div
+              key={index}
+              className="group bg-white rounded-[24px] overflow-hidden transition-all duration-300 border-[1.5px] border-transparent hover:border-[rgba(29,106,101,0.2)]"
+              style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}
+            >
               <div className="relative aspect-video">
                 <Image
                   src={item.image}
@@ -44,20 +56,27 @@ export function Products({ whatsapp }: ProductsProps) {
                   className="object-cover"
                   priority
                 />
-                {/* Logo overlay - sağ alt köşe */}
-                <div className="absolute bottom-1 right-1 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                  <Moon className="w-4 h-4 text-[#253D10]" />
+                <div className="absolute bottom-3 right-3 w-9 h-9 bg-white/95 rounded-full flex items-center justify-center shadow-md">
+                  <Moon className="w-4 h-4" style={{ color: '#1D6A65' }} />
                 </div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-[#253D10] mb-4 font-[family-name:var(--font-playfair)]">
+                <h3
+                  className="text-xl font-extrabold mb-4"
+                  style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#7F1D1D' }}
+                >
                   {item.title}
                 </h3>
-                <a 
+                <a
                   href={`https://wa.me/${whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#128C7E] transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 text-white font-extrabold text-base py-3.5 px-8 rounded-full transition-all hover:-translate-y-0.5 w-full md:w-auto"
+                  style={{
+                    background: '#B91C1C',
+                    fontFamily: 'var(--font-montserrat), Montserrat, sans-serif',
+                    boxShadow: '0 4px 20px rgba(185,28,28,0.35)',
+                  }}
                 >
                   WhatsApp&apos;tan Bilgi Al
                 </a>

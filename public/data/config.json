@@ -20,14 +20,14 @@
       "type": "Büyükbaş Kurban",
       "price": "35.000 ₺",
       "image": "/images/buyukbas.jpg",
-      "features": ["7 Hisse", "Aynı Gün Teslim", "Vakumlu Paketleme", "Profesyonel Kesim"]
+      "features": ["7 Hisse", "1. Gün Teslim", "Vakumlu Paketleme", "Profesyonel Kesim"]
     },
     {
       "id": "kucukbas-2026",
       "type": "Küçükbaş Kurban",
       "price": "8.000 ₺",
       "image": "/images/kucukbas.jpg",
-      "features": ["Tam Hisse", "Aynı Gün Teslim", "Vakumlu Paketleme", "Hijyenik Ortam"]
+      "features": ["Tam Hisse", "1. Gün Teslim", "Vakumlu Paketleme", "Hijyenik Ortam"]
     }
   ],
   "features": [
@@ -43,7 +43,7 @@
     },
     {
       "icon": "truck",
-      "title": "Aynı Gün Teslimat",
+      "title": "1. Gün Teslimat",
       "description": "Profesyonel kasap kadrosu ile kesimden hemen sonra teslimat."
     },
     {
@@ -58,22 +58,139 @@
     { "step": 3, "title": "Kesim", "description": "İslami usullere göre kesim" },
     { "step": 4, "title": "Teslimat", "description": "Aynı gün hijyenik teslimat" }
   ],
+  "stats": [
+    { "number": "20+", "label": "Yıllık Kurban Tecrübesi", "variant": "default" },
+    { "number": "5K+", "label": "Yıllık Kesilen Kurban", "variant": "accent" },
+    { "number": "%100", "label": "İslami Usule Uygunluk", "variant": "accent-red" },
+    { "number": "1.", "label": "Gün Teslim Garantisi", "variant": "default" }
+  ],
+  "services": [
+    {
+      "emoji": "🐄",
+      "title": "Kurban (Büyükbaş)",
+      "description": "Bayram kurbanı için sağlıklı, besili büyükbaş hayvanlar. 7 hisseye kadar ortak kurban imkânı sunulmaktadır.",
+      "tag": "Bayramlık",
+      "featured": false
+    },
+    {
+      "emoji": "🐑",
+      "title": "Kurban (Küçükbaş)",
+      "description": "Koyun ve keçi cinsi küçükbaş hayvanlarla bireysel kurban. Her bütçeye uygun seçenekler mevcuttur.",
+      "tag": "Bireysel",
+      "featured": false
+    },
+    {
+      "emoji": "🌙",
+      "title": "Adak Kurbanı",
+      "description": "Adadığınız kurban yıl içinde herhangi bir zamanda kesilir, eti ihtiyaç sahiplerine ulaştırılır.",
+      "tag": "Yıl İçi",
+      "featured": true
+    },
+    {
+      "emoji": "👶",
+      "title": "Akika Kurbanı",
+      "description": "Yeni doğan bebek için sünnet olan akika kurbanı, dilediğiniz tarihte usulüne uygun şekilde kesilir.",
+      "tag": "Bebek Kurbanı",
+      "featured": false
+    },
+    {
+      "emoji": "🤲",
+      "title": "Şifa & Şükür Kurbanı",
+      "description": "Hastalıktan şifa, nimete şükür ya da dilek kurbanı olarak dilediğiniz zaman kestirme imkânı.",
+      "tag": "Her Zaman",
+      "featured": false
+    },
+    {
+      "emoji": "📦",
+      "title": "Nafile Kurban & Teslim",
+      "description": "Nafile kurbanınız kesildikten sonra eti paketlenerek belirlenen adrese veya ihtiyaç sahiplerine teslim edilir.",
+      "tag": "Kapıya Teslim",
+      "featured": false
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "İletişime Geçin",
+      "description": "Telefon, WhatsApp veya web formu üzerinden bize ulaşın. Kurban türünüzü ve tercihlerinizi bildirin.",
+      "color": "red"
+    },
+    {
+      "step": 2,
+      "title": "Kayıt & Hayvan Seçimi",
+      "description": "Sizi sisteme kaydediyoruz. İsterseniz hayvanınızı bizzat seçebilir, isterseniz bize güvenebilirsiniz.",
+      "color": "teal"
+    },
+    {
+      "step": 3,
+      "title": "İslami Usulde Kesim",
+      "description": "Kurbanınız belirlenen gün ve saatte, dini usule tam uygun, hijyenik ortamda kesilir. Süreç video ile belgelenir.",
+      "color": "red"
+    },
+    {
+      "step": 4,
+      "title": "Paketleme & Teslim",
+      "description": "Et usulüne göre parçalanarak paketlenir. Adresinize teslim edilir veya ihtiyaç sahiplerine dağıtılır.",
+      "color": "teal"
+    }
+  ],
+  "deliveryTimeline": [
+    { "day": "1. Gün", "dotColor": "red", "text": "Bayram namazı sonrası kesimler başlar" },
+    { "day": "1. Gün", "dotColor": "red", "text": "Paketleme & soğuk zincir hazırlığı" },
+    { "day": "1. Gün", "dotColor": "teal", "text": "İlk teslimatlar başlar (öncelikli liste)" },
+    { "day": "2. Gün", "dotColor": "teal", "text": "Kalan teslimatlar tamamlanır" },
+    { "day": "3. Gün", "dotColor": "gray", "text": "İhtiyaç sahiplerine dağıtım tamamlanır" }
+  ],
+  "whyFeatures": [
+    {
+      "icon": "🕌",
+      "title": "İslami & Hijyenik Kesim",
+      "description": "Tüm kesimler din görevlisi eşliğinde, dini kurallara tam uygun, steril ortamda gerçekleştirilir.",
+      "iconVariant": "default"
+    },
+    {
+      "icon": "📋",
+      "title": "Şeffaf Süreç Takibi",
+      "description": "Kesim anından teslimatına kadar her aşamayı SMS ve fotoğraf ile anında bildirim alırsınız.",
+      "iconVariant": "default"
+    },
+    {
+      "icon": "💰",
+      "title": "Her Bütçeye Uygun",
+      "description": "Küçükbaştan büyükbaşa, bireysel hisseden tam kurbana kadar geniş fiyat aralığında seçenek sunuyoruz.",
+      "iconVariant": "red"
+    },
+    {
+      "icon": "🚚",
+      "title": "Kapıya Teslim",
+      "description": "Kurban etinitiz soğuk zincirde, hijyenik ambalajda doğrudan adresinize teslim edilir.",
+      "iconVariant": "default"
+    }
+  ],
   "faq": [
     {
-      "question": "Kurbanlık seçimi nasıl yapılıyor?",
-      "answer": "Bayramdan önce tesisimizi ziyaret ederek canlı kurbanlıklarımızı görebilirsiniz. Uzman ekibimiz size en uygun kurbanlığı seçmenizde yardımcı olur."
+      "question": "Kurban kaydı ne zaman yapılmalıdır?",
+      "answer": "Bayram kurbanları için en geç bayramdan 1 hafta öncesine kadar kayıt yaptırmanızı öneririz. Erken kayıt yaptıranlar 1. gün teslim önceliğinden yararlanır. Yıl içi kurbanlar (adak, akika vb.) için herhangi bir tarihte kayıt yapılabilir."
     },
     {
-      "question": "Etler nasıl paketleniyor?",
-      "answer": "Kıyma, kuşbaşı, lop et, incik ve but olarak ayrı ayrı vakumlu paketleme yapıyoruz. Her paket üzerine isim etiketi yapıştırıyoruz."
+      "question": "Kurban kesiminde bulunabilir miyim?",
+      "answer": "Evet, tüm müşterilerimiz kesim sırasında tesisimizde bulunabilir. Adres ve kesim saati bilgisi kayıt sırasında tarafınıza iletilir. İstemeyenler için kesimi fotoğraf ve kısa video ile belgelendirip paylaşıyoruz."
     },
     {
-      "question": "Kesim günü ne zaman yapılıyor?",
-      "answer": "Kurban Bayramı'nın 1. günü sabah namazından itibaren kesimlere başlıyoruz. Kayıt sırasına göre kesim yapılıyor."
+      "question": "Et nasıl paketlenerek teslim edilir?",
+      "answer": "Kurban eti, isteğe göre bütün karkaslardan parçalanarak vakumlu ya da streç kaplı kasap poşetine konulur. Soğuk zincir araçlarıyla en geç 4–6 saat içinde adresinize teslim edilir. Dağıtım talebi olanlar için ihtiyaç sahiplerine ulaştırılır."
     },
     {
-      "question": "Teslimat nasıl oluyor?",
-      "answer": "Kesim yapıldıktan sonra aynı gün içinde soğuk hava frigolu araçlarımızla adresinize teslimat yapıyoruz."
+      "question": "Büyükbaş kurbanda hisse nasıl işler?",
+      "answer": "Bir büyükbaş hayvan en fazla 7 kişi arasında paylaşılabilir. Her hissedar kurban ibadetinden pay almış olur. Hisse bedelini ödeyerek kaydınızı yaptırabilirsiniz; eşit paylaşım garantisi verilmektedir."
+    },
+    {
+      "question": "Ödeme nasıl yapılır?",
+      "answer": "Kayıt sırasında peşin veya havale/EFT yoluyla ödeme kabul edilmektedir. Kapıda nakit ödeme de mümkündür. Detaylı ödeme bilgileri için lütfen bizi arayın."
+    },
+    {
+      "question": "Yurt dışından kurban kestirmek mümkün mü?",
+      "answer": "Evet, yurt dışında yaşayan vatandaşlarımız telefon veya WhatsApp üzerinden kolayca kayıt yaptırabilir ve havale ile ödeme yapabilir. Kesim belgesi ve fotoğraflar dijital olarak iletilir."
     }
   ]
 }

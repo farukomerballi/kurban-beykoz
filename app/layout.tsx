@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import { Montserrat, Nunito } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ 
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["400", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({ 
+const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  weight: ["400", "600", "700"],
+  variable: "--font-nunito",
   display: "swap",
 });
 
@@ -39,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${playfair.variable} ${cormorant.variable} font-serif`}>{children}</body>
+      <body className={`${montserrat.variable} ${nunito.variable} font-sans`}>{children}</body>
     </html>
   );
 }
