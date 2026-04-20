@@ -11,6 +11,7 @@ export function Footer({ phone, whatsapp }: FooterProps) {
     { label: 'Nasıl Çalışır?', href: '#nasil-calisir' },
     { label: 'SSS', href: '#sss' },
     { label: 'İletişim', href: '#iletisim' },
+    { label: 'Blog', href: '/blog' },
   ];
 
   return (

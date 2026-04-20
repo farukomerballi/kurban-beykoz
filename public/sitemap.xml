@@ -22,4 +22,40 @@
       <image:caption>Koyun ve keçi seçenekleri ile küçükbaş kurban kesim hizmeti</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://kurban-beykoz.com/blog/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kurban-beykoz.com/blog/kurban-fiyatlari-2026/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kurban-beykoz.com/images/buyukbas.webp</image:loc>
+      <image:title>2026 Beykoz Kurban Fiyatları</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kurban-beykoz.com/blog/kurban-nasil-kesilir/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kurban-beykoz.com/images/kucukbas.webp</image:loc>
+      <image:title>Kurban Nasıl Kesilir - İslami Kesim Rehberi</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kurban-beykoz.com/blog/adak-kurbani-nedir/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kurban-beykoz.com/images/kucukbas.webp</image:loc>
+      <image:title>Adak Kurbanı Nedir - Rehber</image:title>
+    </image:image>
+  </url>
 </urlset>

@@ -14,6 +14,7 @@ export function Header({ phone, whatsapp }: HeaderProps) {
     { label: 'Nasıl Çalışır?', href: '#nasil-calisir' },
     { label: 'SSS', href: '#sss' },
     { label: 'İletişim', href: '#iletisim' },
+    { label: 'Blog', href: '/blog' },
   ];
 
   return (
