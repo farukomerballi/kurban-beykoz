@@ -2,7 +2,7 @@
 title: "Adak Kurbanı Nedir? — Beykoz'da Adak Kurbanı Hizmetimiz"
 description: "Adak kurbanı nedir, ne zaman kesilir, kuralları nelerdir? Beykoz'da adak kurbanı kesim hizmetimiz hakkında bilmeniz gereken her şey."
 date: "2026-04-15"
-image: "/images/kucukbas.webp"
+image: "/images/adak-kurbani-nedir.webp"
 tags: ["adak", "adak kurbanı", "rehber", "dini bilgi"]
 ---
 
