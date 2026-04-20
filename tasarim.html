@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beykoz Kurban Organizasyonu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:    #B91C1C;
+    --red-dark: #7F1D1D;
+    --teal:   #1D6A65;
+    --teal-light: #2E9E97;
+    --cream:  #F9F6F1;
+    --white:  #FFFFFF;
+    --text:   #1a1a1a;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 68px;
+    background: rgba(249,246,241,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .nav-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    line-height: 1.1;
+    color: var(--red-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--teal); display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0.7;
+    transition: opacity .2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--red);
+    color: #fff !important;
+    opacity: 1 !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 700 !important;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding-top: 68px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* decorative radial swirl top-right */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,158,151,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(185,28,28,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── LEFT CONTENT ── */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4vw 5rem 8vw;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--teal);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+  .badge::before { content: '🌙'; font-size: 0.9rem; }
+
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.9s ease 0.15s both;
+  }
+
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  .hero-title .line-main {
+    display: block;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    color: var(--red-dark);
+  }
+
+  .hero-title .line-sub {
+    display: block;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    color: var(--teal);
+    font-weight: 800;
+    margin-top: 0.15em;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 700;
+    color: var(--red);
+    background: rgba(185,28,28,0.08);
+    border-left: 4px solid var(--red);
+    padding: 0.6rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.9s ease 0.25s both;
+  }
+
+  .hero-desc {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.7;
+    color: #444;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.9s ease 0.3s both;
+  }
+
+  .hero-desc strong { color: var(--teal); font-weight: 700; }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.9s ease 0.35s both;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 0.85rem 2.2rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(185,28,28,0.35);
+    transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(185,28,28,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--teal);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    border: 2px solid var(--teal);
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all .2s;
+  }
+  .btn-secondary:hover {
+    background: var(--teal);
+    color: #fff;
+  }
+
+  .hero-phone {
+    margin-top: 2rem;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 0.02em;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+  .hero-phone small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ── FEATURES ROW ── */
+  .features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    animation: fadeUp 0.9s ease 0.45s both;
+  }
+
+  .feat-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--teal);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .feat-chip .icon { font-size: 1rem; }
+
+  /* ── RIGHT VISUAL ── */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5vw 5rem 2vw;
+    z-index: 2;
+    animation: fadeIn 1.1s ease 0.2s both;
+  }
+
+  .visual-card {
+    position: relative;
+    background: #fff;
+    border-radius: 32px;
+    padding: 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--red), var(--teal));
+  }
+
+  .vc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .vc-badge {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+
+  .vc-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .vc-animal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .animal-item {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 1rem;
+    text-align: center;
+    border: 1.5px solid transparent;
+    transition: border-color .2s, transform .2s;
+    cursor: default;
+  }
+  .animal-item:hover {
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .animal-item .emoji { font-size: 2.2rem; display: block; margin-bottom: 0.4rem; }
+  .animal-item .name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--teal);
+    display: block;
+  }
+  .animal-item .price {
+    font-size: 0.72rem;
+    color: #888;
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  .delivery-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: #fff;
+    border-radius: 14px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .delivery-tag .tag-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .delivery-tag .tag-text { font-size: 0.85rem; font-weight: 700; line-height: 1.3; }
+  .delivery-tag .tag-sub { font-size: 0.7rem; opacity: 0.85; font-weight: 400; }
+
+  .vc-divider {
+    height: 1px;
+    background: rgba(0,0,0,0.06);
+    margin: 1rem 0;
+  }
+
+  .types-row {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .type-pill {
+    background: rgba(46,158,151,0.1);
+    color: var(--teal);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .vc-footer {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .vc-footer .exp {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+  }
+  .vc-footer .exp strong { color: var(--red); font-size: 1.1rem; }
+
+  /* floating decorative elements */
+  .float-star {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.04;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── SECTION SHARED ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(29,106,101,0.1);
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 0.85rem;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .section-title span { color: var(--red); }
+  .section-subtitle {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── HIZMETLER ── */
+  #hizmetler {
+    padding: 6rem 8vw;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  #hizmetler::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(185,28,28,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1.5px solid transparent;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--teal));
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: left;
+  }
+  .service-card:hover {
+    border-color: rgba(29,106,101,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .sc-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .sc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--red-dark);
+    margin-bottom: 0.5rem;
+  }
+  .sc-desc {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.65;
+  }
+  .sc-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(29,106,101,0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  /* featured big card */
+  .service-card.featured {
+    background: linear-gradient(135deg, var(--red-dark), var(--red));
+    color: #fff;
+    grid-column: span 1;
+  }
+  .service-card.featured .sc-title { color: #fff; }
+  .service-card.featured .sc-desc  { color: rgba(255,255,255,0.8); }
+  .service-card.featured .sc-tag   { background: rgba(255,255,255,0.15); color: #fff; }
+  .service-card.featured::after    { background: rgba(255,255,255,0.4); }
+
+  /* ── NASIL ÇALIŞIR ── */
+  #nasil-calisir {
+    padding: 6rem 8vw;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .steps-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  .step-item:last-child { padding-bottom: 0; }
+  .step-item:last-child .step-line { display: none; }
+
+  .step-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(185,28,28,0.3);
+    position: relative;
+    z-index: 1;
+  }
+  .step-num.teal { background: var(--teal); box-shadow: 0 4px 16px rgba(29,106,101,0.3); }
+  .step-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--red), var(--teal));
+    margin-top: 6px;
+    opacity: 0.2;
+    min-height: 32px;
+  }
+
+  .step-body { padding-top: 0.6rem; }
+  .step-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+  .step-desc {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* right side visual */
+  .steps-visual {
+    position: relative;
+  }
+  .steps-big-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.09);
+    position: relative;
+    overflow: hidden;
+  }
+  .steps-big-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--teal), var(--red));
+  }
+  .sbc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .sbc-title span { color: var(--teal); }
+
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .timeline-item:last-of-type { border-bottom: none; }
+  .tl-day {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    width: 56px;
+    flex-shrink: 0;
+  }
+  .tl-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .tl-dot.red  { background: var(--red); }
+  .tl-dot.teal { background: var(--teal); }
+  .tl-dot.gray { background: #ccc; }
+  .tl-text { font-size: 0.875rem; font-weight: 600; color: #444; }
+
+  .sbc-footer {
+    margin-top: 1.5rem;
+    background: var(--cream);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .sbc-footer .ico { font-size: 1.5rem; }
+  .sbc-footer .txt { font-size: 0.82rem; color: #555; font-weight: 600; line-height: 1.4; }
+  .sbc-footer .txt strong { color: var(--teal); }
+
+  /* ── NEDEN BİZ ── */
+  #neden-biz {
+    padding: 6rem 8vw;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .stat-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s;
+  }
+  .stat-card:hover { transform: translateY(-3px); }
+  .stat-card.accent {
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: #fff;
+  }
+  .stat-card.accent-red {
+    background: linear-gradient(135deg, var(--red-dark), var(--red));
+    color: #fff;
+  }
+  .stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: -0.04em;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-card.accent .stat-number,
+  .stat-card.accent-red .stat-number { color: rgba(255,255,255,0.9); }
+  .stat-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #555;
+    line-height: 1.4;
+  }
+  .stat-card.accent .stat-label,
+  .stat-card.accent-red .stat-label { color: rgba(255,255,255,0.85); }
+
+  .why-content {}
+  .why-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .why-point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    background: var(--cream);
+    border-radius: 16px;
+    border: 1.5px solid transparent;
+    transition: border-color .2s, transform .2s;
+  }
+  .why-point:hover {
+    border-color: rgba(29,106,101,0.2);
+    transform: translateX(4px);
+  }
+  .wp-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .wp-icon.red { background: linear-gradient(135deg, var(--red-dark), var(--red)); }
+  .wp-body {}
+  .wp-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem; }
+  .wp-desc  { font-size: 0.82rem; color: #666; line-height: 1.55; }
+
+  /* ── SSS ── */
+  #sss {
+    padding: 6rem 8vw;
+    background: var(--cream);
+  }
+
+  .faq-container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    border: 1.5px solid rgba(0,0,0,0.06);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .faq-item:hover { border-color: rgba(29,106,101,0.2); box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+  .faq-item.open { border-color: var(--teal); }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  .faq-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(29,106,101,0.1);
+    color: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: transform .3s, background .2s;
+  }
+  .faq-item.open .faq-icon { background: var(--teal); color: #fff; transform: rotate(45deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+    font-size: 0.875rem;
+    color: #555;
+    line-height: 1.7;
+    padding: 0 1.5rem;
+  }
+  .faq-a-inner { padding-bottom: 1.25rem; }
+  .faq-item.open .faq-a { max-height: 300px; }
+
+  /* ── CTA BANNER ── */
+  #iletisim {
+    padding: 6rem 8vw;
+    background: var(--white);
+  }
+
+  .cta-banner {
+    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 45%, var(--teal) 100%);
+    border-radius: 32px;
+    padding: 4rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '🌙';
+    position: absolute;
+    right: 280px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 9rem;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .cta-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.75rem;
+  }
+  .cta-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+  .cta-subtitle { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
+
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+  .cta-phone-big {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: #fff;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .cta-phone-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; }
+
+  .btn-white {
+    background: #fff;
+    color: var(--red);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 0.85rem 2.2rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform .2s, box-shadow .2s;
+    white-space: nowrap;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.6);
+    padding: 2.5rem 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .footer-logo span { color: var(--teal-light); }
+  footer small { font-size: 0.78rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-content {
+      padding: 3rem 6vw 2rem;
+      text-align: center;
+      align-items: center;
+    }
+    .hero-tagline { border-left: none; border-radius: 8px; text-align: center; }
+    .hero-desc { text-align: left; }
+    .hero-visual { padding: 2rem 6vw 4rem; }
+    .nav-links { display: none; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-container { grid-template-columns: 1fr; gap: 3rem; }
+    .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .cta-banner { grid-template-columns: 1fr; padding: 2.5rem 2rem; text-align: center; }
+    .cta-right { width: 100%; }
+    #hizmetler, #nasil-calisir, #neden-biz, #sss, #iletisim { padding: 4rem 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    BEYKOZ<span>Kurban Organizasyonu</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#nasil-calisir">Nasıl Çalışır?</a></li>
+    <li><a href="#neden-biz">Neden Biz?</a></li>
+    <li><a href="#sss">SSS</a></li>
+    <li><a href="#iletisim" class="nav-cta">Hemen Kayıt Ol</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-content">
+
+    <div class="badge">Kurbanla Yakınlaş!</div>
+
+    <p class="hero-eyebrow">Beykoz</p>
+
+    <h1 class="hero-title">
+      <span class="line-main">KURBAN</span>
+      <span class="line-sub">Organizasyonu</span>
+    </h1>
+
+    <p class="hero-tagline">Kurbanını Erteleme — Hemen Kayıt Ol!</p>
+
+    <p class="hero-desc">
+      Yıl içinde <strong>Adak, Akika, Şifa, Şükür, Nafile</strong> kurbanlarınız 
+      kesilerek talebelerimize ikram edilir. İslami ve hijyenik kesim güvencesiyle, 
+      her bütçeye uygun seçeneklerle yanınızdayız.
+    </p>
+
+    <div class="features">
+      <div class="feat-chip"><span class="icon">✅</span> 20+ Yıl Tecrübe</div>
+      <div class="feat-chip"><span class="icon">🕌</span> İslami Kesim</div>
+      <div class="feat-chip"><span class="icon">🚚</span> 1. Gün Teslim</div>
+      <div class="feat-chip"><span class="icon">📋</span> Süreç Takibi</div>
+    </div>
+
+    <div class="hero-actions" style="margin-top:2rem;">
+      <a href="tel:05425913451" class="btn-primary">📞 Hemen Kayıt Ol</a>
+      <a href="#" class="btn-secondary">Detaylı Bilgi →</a>
+    </div>
+
+    <div class="hero-phone">
+      <small>Kurban Danışmanlığı İçin Arayın</small>
+      0 542 591 34 51
+    </div>
+
+  </div>
+
+  <!-- RIGHT VISUAL CARD -->
+  <div class="hero-visual">
+    <div class="visual-card">
+
+      <div class="vc-top">
+        <span class="vc-badge">🌙 Kurban Hizmetleri</span>
+        <span class="vc-year">20+ Yıllık Tecrübe</span>
+      </div>
+
+      <div class="vc-animal-grid">
+        <div class="animal-item">
+          <span class="emoji">🐄</span>
+          <span class="name">Büyükbaş</span>
+          <span class="price">Bütçeye Uygun</span>
+        </div>
+        <div class="animal-item">
+          <span class="emoji">🐑</span>
+          <span class="name">Küçükbaş</span>
+          <span class="price">Her Bütçe</span>
+        </div>
+        <div class="animal-item">
+          <span class="emoji">🐐</span>
+          <span class="name">Keçi</span>
+          <span class="price">Uygun Fiyat</span>
+        </div>
+        <div class="animal-item">
+          <span class="emoji">🐪</span>
+          <span class="name">Deve</span>
+          <span class="price">Talebe Göre</span>
+        </div>
+      </div>
+
+      <div class="delivery-tag">
+        <span class="tag-icon">🚀</span>
+        <div class="tag-text">
+          1. Gün Teslim Garantisi
+          <div class="tag-sub">Bayramın ilk günü evinize taze teslimat</div>
+        </div>
+      </div>
+
+      <div class="vc-divider"></div>
+
+      <p style="font-size:0.78rem; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.6rem;">Kurban Türleri</p>
+      <div class="types-row">
+        <span class="type-pill">Adak</span>
+        <span class="type-pill">Akika</span>
+        <span class="type-pill">Şifa</span>
+        <span class="type-pill">Şükür</span>
+        <span class="type-pill">Nafile</span>
+        <span class="type-pill">Kurban</span>
+      </div>
+
+      <div class="vc-footer">
+        <div class="exp">
+          <strong>20</strong> Yılı Aşkın<br>Kurban Tecrübesi
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:0.75rem;color:#888;font-weight:600;">Kapak Kontrolü</div>
+          <div style="font-size:0.75rem;color:var(--teal);font-weight:700;">✓ Hijyenik Ortam</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     HİZMETLER / KURBAN TÜRLERİ
+══════════════════════════════════════════ -->
+<section id="hizmetler">
+  <div class="section-header reveal">
+    <span class="section-label">Hizmetlerimiz</span>
+    <h2 class="section-title">Her İhtiyaca Uygun<br><span>Kurban Hizmetleri</span></h2>
+    <p class="section-subtitle">Yıl içinde gerçekleştirdiğimiz tüm kurban türlerinde İslami usule ve hijyen standartlarına tam uyum sağlıyoruz.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal reveal-delay-1">
+      <span class="sc-emoji">🐄</span>
+      <div class="sc-title">Kurban (Büyükbaş)</div>
+      <p class="sc-desc">Bayram kurbanı için sağlıklı, besili büyükbaş hayvanlar. 7 hisseye kadar ortak kurban imkânı sunulmaktadır.</p>
+      <span class="sc-tag">Bayramlık</span>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <span class="sc-emoji">🐑</span>
+      <div class="sc-title">Kurban (Küçükbaş)</div>
+      <p class="sc-desc">Koyun ve keçi cinsi küçükbaş hayvanlarla bireysel kurban. Her bütçeye uygun seçenekler mevcuttur.</p>
+      <span class="sc-tag">Bireysel</span>
+    </div>
+
+    <div class="service-card featured reveal reveal-delay-3">
+      <span class="sc-emoji">🌙</span>
+      <div class="sc-title">Adak Kurbanı</div>
+      <p class="sc-desc">Adadığınız kurban yıl içinde herhangi bir zamanda kesilir, eti ihtiyaç sahiplerine ulaştırılır.</p>
+      <span class="sc-tag">Yıl İçi</span>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <span class="sc-emoji">👶</span>
+      <div class="sc-title">Akika Kurbanı</div>
+      <p class="sc-desc">Yeni doğan bebek için sünnet olan akika kurbanı, dilediğiniz tarihte usulüne uygun şekilde kesilir.</p>
+      <span class="sc-tag">Bebek Kurbanı</span>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <span class="sc-emoji">🤲</span>
+      <div class="sc-title">Şifa & Şükür Kurbanı</div>
+      <p class="sc-desc">Hastalıktan şifa, nimete şükür ya da dilek kurbanı olarak dilediğiniz zaman kestirme imkânı.</p>
+      <span class="sc-tag">Her Zaman</span>
+    </div>
+
+    <div class="service-card reveal reveal-delay-3">
+      <span class="sc-emoji">📦</span>
+      <div class="sc-title">Nafile Kurban & Teslim</div>
+      <p class="sc-desc">Nafile kurbanınız kesildikten sonra eti paketlenerek belirlenen adrese veya ihtiyaç sahiplerine teslim edilir.</p>
+      <span class="sc-tag">Kapıya Teslim</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     NASIL ÇALIŞIR
+══════════════════════════════════════════ -->
+<section id="nasil-calisir">
+  <div class="section-header reveal">
+    <span class="section-label">Süreç</span>
+    <h2 class="section-title">Nasıl <span>Çalışır?</span></h2>
+    <p class="section-subtitle">Kayıttan teslimata kadar her adımı takip edebilir, gönül rahatlığıyla kurbanınızı bize emanet edebilirsiniz.</p>
+  </div>
+
+  <div class="steps-container">
+    <!-- Steps -->
+    <div class="steps-list">
+      <div class="step-item reveal reveal-delay-1">
+        <div class="step-num-wrap">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">İletişime Geçin</div>
+          <p class="step-desc">Telefon, WhatsApp veya web formu üzerinden bize ulaşın. Kurban türünüzü ve tercihlerinizi bildirin.</p>
+        </div>
+      </div>
+
+      <div class="step-item reveal reveal-delay-2">
+        <div class="step-num-wrap">
+          <div class="step-num teal">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Kayıt & Hayvan Seçimi</div>
+          <p class="step-desc">Sizi sisteme kaydediyoruz. İsterseniz hayvanınızı bizzat seçebilir, isterseniz bize güvenebilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="step-item reveal reveal-delay-3">
+        <div class="step-num-wrap">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">İslami Usulde Kesim</div>
+          <p class="step-desc">Kurbanınız belirlenen gün ve saatte, dini usule tam uygun, hijyenik ortamda kesilir. Süreç video ile belgelenir.</p>
+        </div>
+      </div>
+
+      <div class="step-item reveal reveal-delay-4">
+        <div class="step-num-wrap">
+          <div class="step-num teal">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Paketleme & Teslim</div>
+          <p class="step-desc">Et usulüne göre parçalanarak paketlenir. Adresinize teslim edilir veya ihtiyaç sahiplerine dağıtılır.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right card -->
+    <div class="steps-visual reveal reveal-delay-2">
+      <div class="steps-big-card">
+        <div class="sbc-title">Bayram Günü <span>Teslimat Takvimi</span></div>
+
+         <div class="timeline-item">
+           <span class="tl-day">1. Gün</span>
+           <span class="tl-dot red"></span>
+           <span class="tl-text">Sabah namazı sonrası kesimler başlar</span>
+         </div>
+         <div class="timeline-item">
+           <span class="tl-day">1. Gün</span>
+           <span class="tl-dot teal"></span>
+           <span class="tl-text">İlk teslimatlar başlar (öncelikli liste)</span>
+         </div>
+        <div class="timeline-item">
+          <span class="tl-day">2. Gün</span>
+          <span class="tl-dot teal"></span>
+          <span class="tl-text">Kalan teslimatlar tamamlanır</span>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-day">3. Gün</span>
+          <span class="tl-dot gray"></span>
+          <span class="tl-text">İhtiyaç sahiplerine dağıtım tamamlanır</span>
+        </div>
+
+        <div class="sbc-footer">
+          <span class="ico">📲</span>
+          <div class="txt">Her aşamada <strong>SMS & WhatsApp</strong> bildirimi gönderilir. Kurbanınızı anında takip edin.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     NEDEN BİZ
+══════════════════════════════════════════ -->
+<section id="neden-biz">
+  <div class="section-header reveal">
+    <span class="section-label">Avantajlarımız</span>
+    <h2 class="section-title">Neden <span>Bizi</span> Seçmelisiniz?</h2>
+    <p class="section-subtitle">20 yılı aşkın tecrübemiz, binlerce memnun ailemiz ve şeffaf süreç anlayışımızla fark yaratıyoruz.</p>
+  </div>
+
+  <div class="why-grid">
+    <!-- Stats -->
+    <div class="why-stats reveal">
+      <div class="stat-card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Yıllık Kurban Tecrübesi</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="stat-number">5K+</div>
+        <div class="stat-label">Yıllık Kesilen Kurban</div>
+      </div>
+      <div class="stat-card accent-red">
+        <div class="stat-number">%100</div>
+        <div class="stat-label">İslami Usule Uygunluk</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1.</div>
+        <div class="stat-label">Gün Teslim Garantisi</div>
+      </div>
+    </div>
+
+    <!-- Points -->
+    <div class="why-content reveal reveal-delay-2">
+      <div class="section-label" style="margin-bottom:1rem;">Fark Yaratan Özellikler</div>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="wp-icon">🕌</div>
+          <div class="wp-body">
+            <div class="wp-title">İslami & Hijyenik Kesim</div>
+            <p class="wp-desc">Tüm kesimler din görevlisi eşliğinde, dini kurallara tam uygun, steril ortamda gerçekleştirilir.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">📋</div>
+          <div class="wp-body">
+            <div class="wp-title">Şeffaf Süreç Takibi</div>
+            <p class="wp-desc">Kesim anından teslimatına kadar her aşamayı SMS ve fotoğraf ile anında bildirim alırsınız.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon red">💰</div>
+          <div class="wp-body">
+            <div class="wp-title">Her Bütçeye Uygun</div>
+            <p class="wp-desc">Küçükbaştan büyükbaşa, bireysel hisseden tam kurbana kadar geniş fiyat aralığında seçenek sunuyoruz.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">🚚</div>
+          <div class="wp-body">
+            <div class="wp-title">Kapıya Teslim</div>
+            <p class="wp-desc">Kurban etinitiz soğuk zincirde, hijyenik ambalajda doğrudan adresinize teslim edilir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SSS
+══════════════════════════════════════════ -->
+<section id="sss">
+  <div class="section-header reveal">
+    <span class="section-label">SSS</span>
+    <h2 class="section-title">Sıkça Sorulan <span>Sorular</span></h2>
+    <p class="section-subtitle">Aklınızdaki soruların cevabını burada bulamazsanız bizi aramaktan çekinmeyin.</p>
+  </div>
+
+  <div class="faq-container">
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Kurban kaydı ne zaman yapılmalıdır?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Bayram kurbanları için en geç bayramdan 1 hafta öncesine kadar kayıt yaptırmanızı öneririz. Erken kayıt yaptıranlar 1. gün teslim önceliğinden yararlanır. Yıl içi kurbanlar (adak, akika vb.) için herhangi bir tarihte kayıt yapılabilir.</div></div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Kurban kesiminde bulunabilir miyim?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Evet, tüm müşterilerimiz kesim sırasında tesisimizde bulunabilir. Adres ve kesim saati bilgisi kayıt sırasında tarafınıza iletilir. İstemeyenler için kesimi fotoğraf ve kısa video ile belgelendirip paylaşıyoruz.</div></div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-3">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Et nasıl paketlenerek teslim edilir?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Kurban eti, isteğe göre bütün karkaslardan parçalanarak vakumlu ya da streç kaplı kasap poşetine konulur. Soğuk zincir araçlarıyla en geç 4–6 saat içinde adresinize teslim edilir. Dağıtım talebi olanlar için ihtiyaç sahiplerine ulaştırılır.</div></div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Büyükbaş kurbanda hisse nasıl işler?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Bir büyükbaş hayvan en fazla 7 kişi arasında paylaşılabilir. Her hissedar kurban ibadetinden pay almış olur. Hisse bedelini ödeyerek kaydınızı yaptırabilirsiniz; eşit paylaşım garantisi verilmektedir.</div></div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Ödeme nasıl yapılır?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Kayıt sırasında peşin veya havale/EFT yoluyla ödeme kabul edilmektedir. Kapıda nakit ödeme de mümkündür. Detaylı ödeme bilgileri için lütfen bizi arayın.</div></div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-3">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Yurt dışından kurban kestirmek mümkün mü?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Evet, yurt dışında yaşayan vatandaşlarımız telefon veya WhatsApp üzerinden kolayca kayıt yaptırabilir ve havale ile ödeme yapabilir. Kesim belgesi ve fotoğraflar dijital olarak iletilir.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA BANNER & İLETİŞİM
+══════════════════════════════════════════ -->
+<section id="iletisim">
+  <div class="cta-banner reveal">
+    <div class="cta-left">
+      <div class="cta-label">Kurban Danışmanlığı</div>
+      <div class="cta-title">Kurbanını Erteleme,<br>Hemen Kayıt Ol!</div>
+      <div class="cta-subtitle">20 yılı aşkın tecrübemiz ve binlerce memnun ailemizle bu yıl da yanınızdayız. Kontenjanlar dolmadan yerinizi ayırtın.</div>
+    </div>
+    <div class="cta-right">
+      <div class="cta-phone-label">Hemen Arayın</div>
+      <div class="cta-phone-big">0 542 591 34 51</div>
+      <a href="tel:05425913451" class="btn-white">📞 Şimdi Ara</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">BEYKOZ <span>Kurban Organizasyonu</span></div>
+  <small>© 2025 Beykoz Kurban Organizasyonu — Tüm hakları saklıdır.</small>
+  <small>0 542 591 34 51</small>
+</footer>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+
+</body>
+</html>

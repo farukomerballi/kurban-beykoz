@@ -135,9 +135,8 @@
     }
   ],
   "deliveryTimeline": [
-    { "day": "1. Gün", "dotColor": "red", "text": "Bayram namazı sonrası kesimler başlar" },
-    { "day": "1. Gün", "dotColor": "red", "text": "Paketleme & soğuk zincir hazırlığı" },
-    { "day": "1. Gün", "dotColor": "teal", "text": "İlk teslimatlar başlar (öncelikli liste)" },
+     { "day": "1. Gün", "dotColor": "red", "text": "Bayram namazı sonrası kesimler başlar" },
+     { "day": "1. Gün", "dotColor": "teal", "text": "İlk teslimatlar başlar (öncelikli liste)" },
     { "day": "2. Gün", "dotColor": "teal", "text": "Kalan teslimatlar tamamlanır" },
     { "day": "3. Gün", "dotColor": "gray", "text": "İhtiyaç sahiplerine dağıtım tamamlanır" }
   ],
