@@ -11,7 +11,6 @@ export function Header({ phone, whatsapp }: HeaderProps) {
 
   const navLinks = [
     { label: 'Hizmetler', href: '#hizmetler' },
-    { label: 'Kurbanlık Fiyatları', href: '#products' },
     { label: 'Nasıl Çalışır?', href: '#nasil-calisir' },
     { label: 'SSS', href: '#sss' },
     { label: 'İletişim', href: '#iletisim' },
