@@ -1,0 +1,22 @@
+{
+  "name": "Beykoz Kurban Kesim Hizmeti",
+  "short_name": "Beykoz Kurban",
+  "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. 20+ yıllık tecrübe, aynı gün teslimat.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9F6F1",
+  "theme_color": "#1D6A65",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "873x344",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.webp",
+      "sizes": "400x158",
+      "type": "image/webp"
+    }
+  ]
+}

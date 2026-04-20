@@ -75,12 +75,12 @@ export function Hizmetler({ services, whatsapp }: HizmetlerProps) {
 
   const products: Product[] = [
     {
-      image: '/images/buyukbas.png',
+      image: '/images/buyukbas.webp',
       title: 'Büyükbaş Kurbanlık',
       alt: 'Beykoz Büyükbaş Kurbanlık - 7 Hisse Seçeneği ile İslami Usule Uygun Kesim',
     },
     {
-      image: '/images/kucukbas.png',
+      image: '/images/kucukbas.webp',
       title: 'Küçükbaş Kurbanlık',
       alt: 'Beykoz Küçükbaş Kurbanlık - Koyun ve Keçi Seçenekleri',
     },
@@ -126,7 +126,7 @@ export function Hizmetler({ services, whatsapp }: HizmetlerProps) {
             <span style={{ color: '#B91C1C' }}>Kurban Kesim Hizmetleri</span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Beykoz'da kurban bayramı ve yıl içi adak, akika kurbanı kesim hizmeti veriyoruz. 
+            Beykoz'da kurban bayramı ve yıl içi adak, akika kurbanı kesim hizmeti veriyoruz.
             İslami usule tam uygun, hijyenik koşullarda profesyonel kesim.
           </p>
         </div>
@@ -141,8 +141,8 @@ export function Hizmetler({ services, whatsapp }: HizmetlerProps) {
               index % 3 === 0
                 ? 'reveal-delay-1'
                 : index % 3 === 1
-                ? 'reveal-delay-2'
-                : 'reveal-delay-3';
+                  ? 'reveal-delay-2'
+                  : 'reveal-delay-3';
 
             return (
               <ServiceCard
@@ -178,9 +178,8 @@ export function Hizmetler({ services, whatsapp }: HizmetlerProps) {
             {products.map((item, index) => (
               <div
                 key={index}
-                className={`group relative rounded-[24px] overflow-hidden bg-white border-[1.5px] border-transparent transition-all duration-300 hover:border-[rgba(29,106,101,0.2)] ${
-                  index === 0 ? 'reveal-delay-1' : 'reveal-delay-2'
-                }`}
+                className={`group relative rounded-[24px] overflow-hidden bg-white border-[1.5px] border-transparent transition-all duration-300 hover:border-[rgba(29,106,101,0.2)] ${index === 0 ? 'reveal-delay-1' : 'reveal-delay-2'
+                  }`}
                 style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}
               >
                 <div className="relative aspect-[16/10]">

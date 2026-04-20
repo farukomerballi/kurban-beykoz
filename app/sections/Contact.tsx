@@ -12,7 +12,7 @@ export function Contact({ phone, whatsapp }: ContactProps) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="iletisim" className="py-20 lg:py-24" style={{ background: '#fff' }}>
+    <section id="iletisim" className="py-20 lg:py-24" style={{ background: '#fff' }} aria-label="İletişim">
       <div className="px-4 sm:px-6 lg:px-[8vw]">
         <div
           ref={ref}

@@ -30,8 +30,8 @@ export function Header({ phone, whatsapp }: HeaderProps) {
       {/* Logo */}
       <a href="#hero" className="flex-shrink-0" aria-label="Beykoz Kurban Ana Sayfa">
         <Image
-          src="/images/logo.png"
-          alt="Beykoz Kurban Kesim Hizmeti Logo"
+          src="/images/logo.webp"
+          alt="Beykoz Kurban Kesim Hizmeti - İslami Usullere Uygun Kurban Organizasyonu Logo"
           width={120}
           height={120}
           className="rounded-full"
@@ -40,8 +40,8 @@ export function Header({ phone, whatsapp }: HeaderProps) {
         />
       </a>
 
-      {/* Desktop Nav */}
-      <nav className="hidden lg:flex items-center gap-8 list-none">
+      {/* Desktop Nav - Ana Menü */}
+      <nav className="hidden lg:flex items-center gap-8 list-none" aria-label="Ana Menü">
         {navLinks.map((link) => (
           <a
             key={link.label}
@@ -66,6 +66,7 @@ export function Header({ phone, whatsapp }: HeaderProps) {
         className="lg:hidden flex flex-col justify-center gap-1.5 w-10 h-10"
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label="Menü"
+        aria-expanded={mobileOpen}
       >
         <span
           className="block h-0.5 w-6 rounded transition-transform"

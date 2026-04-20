@@ -62,7 +62,7 @@
 ```
 User-agent: *
 Allow: /
-Sitemap: https://www.beykozkurban.com/sitemap.xml
+Sitemap: https://www.kurban-beykoz.com/sitemap.xml
 ```
 
 ### 3.2 sitemap.xml
@@ -70,7 +70,7 @@ Sitemap: https://www.beykozkurban.com/sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.beykozkurban.com/</loc>
+    <loc>https://www.kurban-beykoz.com/</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -87,7 +87,7 @@ Sitemap: https://www.beykozkurban.com/sitemap.xml
   "@type": "LocalBusiness",
   "name": "Beykoz Kurban Organizasyonu",
   "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. 20+ yıllık tecrübe.",
-  "url": "https://www.beykozkurban.com",
+  "url": "https://www.kurban-beykoz.com",
   "telephone": "+90-542-591-34-51",
   "address": {
     "@type": "PostalAddress",
@@ -102,7 +102,7 @@ Sitemap: https://www.beykozkurban.com/sitemap.xml
   },
   "openingHours": "Mo-Su 08:00-19:00",
   "priceRange": "₺₺",
-  "image": "https://www.beykozkurban.com/images/logo.png"
+  "image": "https://www.kurban-beykoz.com/images/logo.png"
 }
 ```
 

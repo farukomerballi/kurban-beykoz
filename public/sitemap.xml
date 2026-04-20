@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.beykozkurban.com/</loc>
+    <loc>https://www.kurban-beykoz.com/</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.kurban-beykoz.com/images/logo.png</image:loc>
+      <image:title>Beykoz Kurban Organizasyonu Logo</image:title>
+      <image:caption>Beykoz'da İslami usullere uygun kurban kesim hizmeti</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kurban-beykoz.com/images/buyukbas.webp</image:loc>
+      <image:title>Beykoz Büyükbaş Kurbanlık</image:title>
+      <image:caption>7 hisse seçeneği ile İslami usule uygun büyükbaş kurban kesim hizmeti</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kurban-beykoz.com/images/kucukbas.webp</image:loc>
+      <image:title>Beykoz Küçükbaş Kurbanlık</image:title>
+      <image:caption>Koyun ve keçi seçenekleri ile küçükbaş kurban kesim hizmeti</image:caption>
+    </image:image>
   </url>
 </urlset>
