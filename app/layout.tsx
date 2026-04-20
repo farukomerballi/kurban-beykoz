@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Nunito } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -40,6 +41,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D2ZS8E6NWC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D2ZS8E6NWC');
+          `}
+        </Script>
+      </head>
       <body className={`${montserrat.variable} ${nunito.variable} font-sans`}>{children}</body>
     </html>
   );
