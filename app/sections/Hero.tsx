@@ -59,13 +59,13 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
           >
             <span
-              className="block text-5xl sm:text-6xl lg:text-[5.5rem] font-black"
+              className="block text-[2.8rem] sm:text-[3.5rem] lg:text-[4.2rem] font-black leading-[1.1]"
               style={{ color: '#7F1D1D' }}
             >
               Beykoz Kurban
-            </span>
+            </span>{' '}
             <span
-              className="block text-2xl sm:text-3xl lg:text-[2.8rem] font-extrabold mt-1"
+              className="block text-2xl sm:text-3xl lg:text-[2.4rem] font-extrabold mt-1"
               style={{ color: '#1D6A65' }}
             >
               Kesim Hizmeti
@@ -84,10 +84,10 @@ export function Hero({ phone, whatsapp }: HeroProps) {
           </p>
 
           <p className="text-base leading-7 max-w-md mb-8" style={{ color: '#444' }}>
-            Beykoz'da <strong style={{ color: '#1D6A65', fontWeight: 700 }}>20+ yıllık tecrübe</strong> ile İslami usullere uygun 
-            <strong style={{ color: '#1D6A65', fontWeight: 700 }}> büyükbaş ve küçükbaş kurban kesim hizmeti</strong> sunuyoruz. 
-            Adak, akika, şifa, şükür ve nafile kurbanlarınız hijyenik koşullarda kesilerek, 
-            aynı gün teslimat garantisiyle adresinize ulaştırılır. Her bütçeye uygun 
+            Beykoz'da <strong style={{ color: '#1D6A65', fontWeight: 700 }}>20+ yıllık tecrübe</strong> ile İslami usullere uygun
+            <strong style={{ color: '#1D6A65', fontWeight: 700 }}> büyükbaş ve küçükbaş kurban kesim hizmeti</strong> sunuyoruz.
+            Adak, akika, şifa, şükür ve nafile kurbanlarınız hijyenik koşullarda kesilerek,
+            aynı gün teslimat garantisiyle adresinize ulaştırılır. Her bütçeye uygun
             kurbanlık fiyatları ile Beykoz'un en güvenilir kurban kesim merkeziyiz.
           </p>
 
@@ -160,18 +160,18 @@ export function Hero({ phone, whatsapp }: HeroProps) {
               style={{ background: 'linear-gradient(90deg, #B91C1C, #1D6A65)' }}
             />
 
-            <div className="flex justify-between items-start mb-6 mt-1">
+            <div className="flex justify-between items-center mb-6 mt-1">
               <span
-                className="px-3 py-1 rounded-full text-xs font-extrabold tracking-wide text-white"
+                className="px-3 py-1.5 rounded-full text-sm font-extrabold tracking-wide text-white whitespace-nowrap"
                 style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', background: '#B91C1C' }}
               >
                 🌙 Kurban Hizmetleri
               </span>
               <span
-                className="text-xs font-bold tracking-widest uppercase"
+                className="text-xs sm:text-sm font-bold tracking-widest uppercase text-right leading-tight"
                 style={{ color: '#999' }}
               >
-                20+ Yıllık Kurban Tecrübesi
+                20+ Yıllık<br className="sm:hidden" /> Kurban Tecrübesi
               </span>
             </div>
 
@@ -246,9 +246,9 @@ export function Hero({ phone, whatsapp }: HeroProps) {
                 Kurban Tecrübesi
               </div>
               <div className="text-right">
-              <div className="text-xs font-semibold" style={{ color: '#888' }}>
-                Hijyenik Ortam
-              </div>
+                <div className="text-xs font-semibold" style={{ color: '#888' }}>
+                  Hijyenik Ortam
+                </div>
                 <div className="text-xs font-bold" style={{ color: '#1D6A65' }}>
                   ✓ İslami Usule Uygun
                 </div>
