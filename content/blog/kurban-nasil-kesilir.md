@@ -2,7 +2,7 @@
 title: "Kurban Nasıl Kesilir? — İslami Usullere Uygun Kurban Kesim Rehberi"
 description: "İslami usullere uygun kurban kesimi nasıl yapılır? Dini kurallar, hijyenik koşullar ve kesim sonrası süreç hakkında detaylı rehber."
 date: "2026-04-18"
-image: "/images/kucukbas.webp"
+image: "/images/general-blog-image.webp"
 tags: ["İslami kesim", "rehber", "kurban kesimi"]
 ---
 

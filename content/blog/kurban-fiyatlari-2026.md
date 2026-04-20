@@ -2,7 +2,7 @@
 title: "2026 Beykoz Kurban Fiyatları — Büyükbaş ve Küçükbaş Kurbanlık Fiyat Rehberi"
 description: "2026 yılı Beykoz'da büyükbaş ve küçükbaş kurbanlık fiyatları, hisse bedelleri ve erken kayıt avantajları. Bütçenize uygun kurban seçeneklerini karşılaştırın."
 date: "2026-04-20"
-image: "/images/buyukbas.webp"
+image: "/images/general-blog-image.webp"
 tags: ["fiyat", "2026", "büyükbaş", "küçükbaş", "hisse"]
 ---
 
