@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beykoz Kurban Organizasyonu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:    #B91C1C;
+    --red-dark: #7F1D1D;
+    --teal:   #1D6A65;
+    --teal-light: #2E9E97;
+    --cream:  #F9F6F1;
+    --white:  #FFFFFF;
+    --text:   #1a1a1a;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 68px;
+    background: rgba(249,246,241,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .nav-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    line-height: 1.1;
+    color: var(--red-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--teal); display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0.7;
+    transition: opacity .2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--red);
+    color: #fff !important;
+    opacity: 1 !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 700 !important;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding-top: 68px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* decorative radial swirl top-right */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,158,151,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(185,28,28,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── LEFT CONTENT ── */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4vw 5rem 8vw;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--teal);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+  .badge::before { content: '🌙'; font-size: 0.9rem; }
+
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.9s ease 0.15s both;
+  }
+
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  .hero-title .line-main {
+    display: block;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    color: var(--red-dark);
+  }
+
+  .hero-title .line-sub {
+    display: block;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    color: var(--teal);
+    font-weight: 800;
+    margin-top: 0.15em;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 700;
+    color: var(--red);
+    background: rgba(185,28,28,0.08);
+    border-left: 4px solid var(--red);
+    padding: 0.6rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.9s ease 0.25s both;
+  }
+
+  .hero-desc {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.7;
+    color: #444;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.9s ease 0.3s both;
+  }
+
+  .hero-desc strong { color: var(--teal); font-weight: 700; }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.9s ease 0.35s both;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 0.85rem 2.2rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(185,28,28,0.35);
+    transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(185,28,28,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--teal);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    border: 2px solid var(--teal);
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all .2s;
+  }
+  .btn-secondary:hover {
+    background: var(--teal);
+    color: #fff;
+  }
+
+  .hero-phone {
+    margin-top: 2rem;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 0.02em;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+  .hero-phone small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ── FEATURES ROW ── */
+  .features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    animation: fadeUp 0.9s ease 0.45s both;
+  }
+
+  .feat-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--teal);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .feat-chip .icon { font-size: 1rem; }
+
+  /* ── RIGHT VISUAL ── */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5vw 5rem 2vw;
+    z-index: 2;
+    animation: fadeIn 1.1s ease 0.2s both;
+  }
+
+  .visual-card {
+    position: relative;
+    background: #fff;
+    border-radius: 32px;
+    padding: 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--red), var(--teal));
+  }
+
+  .vc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .vc-badge {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+
+  .vc-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .vc-animal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .animal-item {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 1rem;
+    text-align: center;
+    border: 1.5px solid transparent;
+    transition: border-color .2s, transform .2s;
+    cursor: default;
+  }
+  .animal-item:hover {
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .animal-item .emoji { font-size: 2.2rem; display: block; margin-bottom: 0.4rem; }
+  .animal-item .name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--teal);
+    display: block;
+  }
+  .animal-item .price {
+    font-size: 0.72rem;
+    color: #888;
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  .delivery-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: #fff;
+    border-radius: 14px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .delivery-tag .tag-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .delivery-tag .tag-text { font-size: 0.85rem; font-weight: 700; line-height: 1.3; }
+  .delivery-tag .tag-sub { font-size: 0.7rem; opacity: 0.85; font-weight: 400; }
+
+  .vc-divider {
+    height: 1px;
+    background: rgba(0,0,0,0.06);
+    margin: 1rem 0;
+  }
+
+  .types-row {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .type-pill {
+    background: rgba(46,158,151,0.1);
+    color: var(--teal);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .vc-footer {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .vc-footer .exp {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+  }
+  .vc-footer .exp strong { color: var(--red); font-size: 1.1rem; }
+
+  /* floating decorative elements */
+  .float-star {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.04;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .hero-content {
+      padding: 3rem 6vw 2rem;
+      text-align: center;
+      align-items: center;
+    }
+    .hero-tagline { border-left: none; border-radius: 8px; text-align: center; }
+    .hero-desc { text-align: left; }
+    .hero-visual {
+      padding: 2rem 6vw 4rem;
+    }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    BEYKOZ<span>Kurban Organizasyonu</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Hakkımızda</a></li>
+    <li><a href="#">Hizmetler</a></li>
+    <li><a href="#">Kurban Türleri</a></li>
+    <li><a href="#" class="nav-cta">Hemen Kayıt Ol</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-content">
+
+    <div class="badge">Kurbanla Yakınlaş!</div>
+
+    <p class="hero-eyebrow">Beykoz</p>
+
+    <h1 class="hero-title">
+      <span class="line-main">KURBAN</span>
+      <span class="line-sub">Organizasyonu</span>
+    </h1>
+
+    <p class="hero-tagline">Kurbanını Erteleme — Hemen Kayıt Ol!</p>
+
+    <p class="hero-desc">
+      Yıl içinde <strong>Adak, Akika, Şifa, Şükür, Nafile</strong> kurbanlarınız 
+      kesilerek talebelerimize ikram edilir. İslami ve hijyenik kesim güvencesiyle, 
+      her bütçeye uygun seçeneklerle yanınızdayız.
+    </p>
+
+    <div class="features">
+      <div class="feat-chip"><span class="icon">✅</span> 20+ Yıl Tecrübe</div>
+      <div class="feat-chip"><span class="icon">🕌</span> İslami Kesim</div>
+      <div class="feat-chip"><span class="icon">🚚</span> 1. Gün Teslim</div>
+      <div class="feat-chip"><span class="icon">📋</span> Süreç Takibi</div>
+    </div>
+
+    <div class="hero-actions" style="margin-top:2rem;">
+      <a href="tel:05425913451" class="btn-primary">📞 Hemen Kayıt Ol</a>
+      <a href="#" class="btn-secondary">Detaylı Bilgi →</a>
+    </div>
+
+    <div class="hero-phone">
+      <small>Kurban Danışmanlığı İçin Arayın</small>
+      0 542 591 34 51
+    </div>
+
+  </div>
+
+  <!-- RIGHT VISUAL CARD -->
+  <div class="hero-visual">
+    <div class="visual-card">
+
+      <div class="vc-top">
+        <span class="vc-badge">🌙 Kurban Hizmetleri</span>
+        <span class="vc-year">20+ Yıllık Tecrübe</span>
+      </div>
+
+      <div class="vc-animal-grid">
+        <div class="animal-item">
+          <span class="emoji">🐄</span>
+          <span class="name">Büyükbaş</span>
+          <span class="price">Bütçeye Uygun</span>
+        </div>
+        <div class="animal-item">
+          <span class="emoji">🐑</span>
+          <span class="name">Küçükbaş</span>
+          <span class="price">Her Bütçe</span>
+        </div>
+        <div class="animal-item">
+          <span class="emoji">🐐</span>
+          <span class="name">Keçi</span>
+          <span class="price">Uygun Fiyat</span>
+        </div>
+        <div class="animal-item">
+          <span class="emoji">🐪</span>
+          <span class="name">Deve</span>
+          <span class="price">Talebe Göre</span>
+        </div>
+      </div>
+
+      <div class="delivery-tag">
+        <span class="tag-icon">🚀</span>
+        <div class="tag-text">
+          1. Gün Teslim Garantisi
+          <div class="tag-sub">Bayramın ilk günü evinize taze teslimat</div>
+        </div>
+      </div>
+
+      <div class="vc-divider"></div>
+
+      <p style="font-size:0.78rem; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.6rem;">Kurban Türleri</p>
+      <div class="types-row">
+        <span class="type-pill">Adak</span>
+        <span class="type-pill">Akika</span>
+        <span class="type-pill">Şifa</span>
+        <span class="type-pill">Şükür</span>
+        <span class="type-pill">Nafile</span>
+        <span class="type-pill">Kurban</span>
+      </div>
+
+      <div class="vc-footer">
+        <div class="exp">
+          <strong>20</strong> Yılı Aşkın<br>Kurban Tecrübesi
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:0.75rem;color:#888;font-weight:600;">Kapak Kontrolü</div>
+          <div style="font-size:0.75rem;color:var(--teal);font-weight:700;">✓ Hijyenik Ortam</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

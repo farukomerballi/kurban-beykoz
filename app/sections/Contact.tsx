@@ -43,18 +43,20 @@ export function Contact({ phone, whatsapp }: ContactProps) {
                 className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
                 style={{ color: 'rgba(255,255,255,0.7)' }}
               >
-                Kurban Danışmanlığı
+                Beykoz Kurban Danışmanlığı
               </div>
               <h2
                 className="text-2xl md:text-3xl lg:text-[2.4rem] font-black tracking-tight leading-tight mb-3 text-white"
                 style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
               >
-                Kurbanını Erteleme,
+                Beykoz'da Kurbanınızı
                 <br />
-                Hemen Kayıt Ol!
+                Hemen Kayıt Yaptırın!
               </h2>
               <p className="text-sm lg:text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                20 yılı aşkın tecrübemiz ve binlerce memnun ailemizle bu yıl da yanınızdayız. Kontenjanlar dolmadan yerinizi ayırtın.
+                Beykoz kurban kesim hizmetinde 20+ yıllık tecrübemiz ve binlerce memnun ailemizle 
+                bu yıl da yanınızdayız. Büyükbaş, küçükbaş, adak, akika kurbanlarınız için 
+                kontenjanlar dolmadan yerinizi ayırtın.
               </p>
             </div>
 

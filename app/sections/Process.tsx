@@ -93,10 +93,11 @@ export function Process({ steps, deliveryTimeline }: ProcessProps) {
             className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
           >
-            Nasıl <span style={{ color: '#B91C1C' }}>Çalışır?</span>
+            Beykoz'da Kurban <span style={{ color: '#B91C1C' }}>Nasıl Kesilir?</span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Kayıttan teslimata kadar her adımı takip edebilir, gönül rahatlığıyla kurbanınızı bize emanet edebilirsiniz.
+            Beykoz kurban kesim hizmetimizde kayıttan teslimata kadar her adımı takip edebilir, 
+            gönül rahatlığıyla kurbanınızı bize emanet edebilirsiniz. İslami usule tam uygun, hijyenik koşullarda.
           </p>
         </div>
 

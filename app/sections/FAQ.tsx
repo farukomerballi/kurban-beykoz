@@ -91,10 +91,11 @@ export function FAQ({ faqs }: FAQProps) {
             className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
           >
-            Sıkça Sorulan <span style={{ color: '#B91C1C' }}>Sorular</span>
+            Beykoz Kurban <span style={{ color: '#B91C1C' }}>SSS</span> — Sıkça Sorulan Sorular
           </h2>
           <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Aklınızdaki soruların cevabını burada bulamazsanız bizi aramaktan çekinmeyin.
+            Beykoz kurban kesim hizmeti hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz. 
+            Aklınıza takılan başka bir soru olursa bizi aramaktan çekinmeyin.
           </p>
         </div>
 

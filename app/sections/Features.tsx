@@ -44,10 +44,12 @@ export function Features({ stats, whyFeatures }: FeaturesProps) {
             className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
           >
-            Neden <span style={{ color: '#B91C1C' }}>Bizi</span> Seçmelisiniz?
+            Neden Beykoz'da <span style={{ color: '#B91C1C' }}>Bizi</span> Tercih Etmelisiniz?
           </h2>
           <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            20 yılı aşkın tecrübemiz, binlerce memnun ailemiz ve şeffaf süreç anlayışımızla fark yaratıyoruz.
+            Beykoz kurban kesim hizmetinde 20+ yıllık tecrübemiz, binlerce memnun ailemiz ve 
+            şeffaf süreç anlayışımızla fark yaratıyoruz. İslami usule tam uygun, hijyenik koşullarda 
+            profesyonel kurban kesimi.
           </p>
         </div>
 

@@ -10,12 +10,12 @@ export function Products({ whatsapp }: ProductsProps) {
     {
       image: '/images/buyukbas.png',
       title: 'Büyükbaş Kurbanlık',
-      alt: 'Büyükbaş Kurbanlık',
+      alt: 'Beykoz Büyükbaş Kurbanlık - 7 Hisse Seçeneği ile İslami Usule Uygun Kesim',
     },
     {
       image: '/images/kucukbas.png',
       title: 'Küçükbaş Kurbanlık',
-      alt: 'Küçükbaş Kurbanlık',
+      alt: 'Beykoz Küçükbaş Kurbanlık - Koyun ve Keçi Seçenekleri',
     },
   ];
 
@@ -29,16 +29,16 @@ export function Products({ whatsapp }: ProductsProps) {
           >
             Kurbanlıklarımız
           </span>
-          <h2
-            className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
-            style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
-          >
-            2026 Kurbanlık <span style={{ color: '#B91C1C' }}>Fiyatları</span>
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Hijyenik koşullarda, İslami usullere uygun kesim hizmeti.
-            Fiyatlarımıza kesim, parçalama ve paketleme dahildir.
-          </p>
+        <h2
+          className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
+          style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
+        >
+          2026 Beykoz <span style={{ color: '#B91C1C' }}>Kurbanlık Fiyatları</span>
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          Beykoz'da hijyenik koşullarda, İslami usullere uygun kurban kesim hizmeti.
+          Büyükbaş ve küçükbaş kurbanlık fiyatlarımıza kesim, parçalama ve paketleme dahildir.
+        </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">

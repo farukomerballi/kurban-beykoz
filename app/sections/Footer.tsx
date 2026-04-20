@@ -11,10 +11,10 @@ export function Footer() {
         style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#fff' }}
       >
         BEYKOZ{' '}
-        <span style={{ color: '#2E9E97' }}>Kurban Organizasyonu</span>
+        <span style={{ color: '#2E9E97' }}>Kurban Kesim Hizmeti</span>
       </div>
       <small className="text-xs">
-        © {currentYear} Beykoz Kurban Organizasyonu — Tüm hakları saklıdır.
+        © {currentYear} Beykoz Kurban Organizasyonu — Beykoz'da İslami usullere uygun kurban kesim hizmeti. Tüm hakları saklıdır.
       </small>
     </footer>
   );

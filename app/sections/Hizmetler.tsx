@@ -77,12 +77,12 @@ export function Hizmetler({ services, whatsapp }: HizmetlerProps) {
     {
       image: '/images/buyukbas.png',
       title: 'Büyükbaş Kurbanlık',
-      alt: 'Büyükbaş Kurbanlık',
+      alt: 'Beykoz Büyükbaş Kurbanlık - 7 Hisse Seçeneği ile İslami Usule Uygun Kesim',
     },
     {
       image: '/images/kucukbas.png',
       title: 'Küçükbaş Kurbanlık',
-      alt: 'Küçükbaş Kurbanlık',
+      alt: 'Beykoz Küçükbaş Kurbanlık - Koyun ve Keçi Seçenekleri',
     },
   ];
 
@@ -121,12 +121,13 @@ export function Hizmetler({ services, whatsapp }: HizmetlerProps) {
             className="text-3xl md:text-4xl lg:text-[2.8rem] font-black tracking-tight leading-tight mb-4"
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', color: '#1a1a1a' }}
           >
-            Her İhtiyaca Uygun
+            Beykoz'da Her İhtiyaca Uygun
             <br />
-            <span style={{ color: '#B91C1C' }}>Kurban Hizmetleri</span>
+            <span style={{ color: '#B91C1C' }}>Kurban Kesim Hizmetleri</span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Yıl içinde gerçekleştirdiğimiz tüm kurban türlerinde İslami usule ve hijyen standartlarına tam uyum sağlıyoruz.
+            Beykoz'da kurban bayramı ve yıl içi adak, akika kurbanı kesim hizmeti veriyoruz. 
+            İslami usule tam uygun, hijyenik koşullarda profesyonel kesim.
           </p>
         </div>
 

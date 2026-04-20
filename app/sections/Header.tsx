@@ -11,9 +11,10 @@ export function Header({ phone, whatsapp }: HeaderProps) {
 
   const navLinks = [
     { label: 'Hizmetler', href: '#hizmetler' },
+    { label: 'Kurbanlık Fiyatları', href: '#products' },
     { label: 'Nasıl Çalışır?', href: '#nasil-calisir' },
-    { label: 'Neden Biz?', href: '#neden-biz' },
     { label: 'SSS', href: '#sss' },
+    { label: 'İletişim', href: '#iletisim' },
   ];
 
   return (
@@ -27,10 +28,10 @@ export function Header({ phone, whatsapp }: HeaderProps) {
       }}
     >
       {/* Logo */}
-      <a href="#hero" className="flex-shrink-0">
+      <a href="#hero" className="flex-shrink-0" aria-label="Beykoz Kurban Ana Sayfa">
         <Image
           src="/images/logo.png"
-          alt="Beykoz Kurban"
+          alt="Beykoz Kurban Kesim Hizmeti Logo"
           width={120}
           height={120}
           className="rounded-full"

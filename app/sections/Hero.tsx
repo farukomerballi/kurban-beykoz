@@ -44,14 +44,14 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             style={{ background: '#1D6A65' }}
           >
             <span>🌙</span>
-            <span>Kurbanla Yakınlaş!</span>
+            <span>2026 Kurban Bayramı</span>
           </div>
 
           <p
             className="text-sm font-bold tracking-[0.25em] uppercase mb-2"
             style={{ color: '#1D6A65', fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
           >
-            Beykoz
+            Beykoz, İstanbul
           </p>
 
           <h1
@@ -62,13 +62,13 @@ export function Hero({ phone, whatsapp }: HeroProps) {
               className="block text-5xl sm:text-6xl lg:text-[5.5rem] font-black"
               style={{ color: '#7F1D1D' }}
             >
-              KURBAN
+              Beykoz Kurban
             </span>
             <span
               className="block text-2xl sm:text-3xl lg:text-[2.8rem] font-extrabold mt-1"
               style={{ color: '#1D6A65' }}
             >
-              Organizasyonu
+              Kesim Hizmeti
             </span>
           </h1>
 
@@ -84,12 +84,11 @@ export function Hero({ phone, whatsapp }: HeroProps) {
           </p>
 
           <p className="text-base leading-7 max-w-md mb-8" style={{ color: '#444' }}>
-            Yıl içinde{' '}
-            <strong style={{ color: '#1D6A65', fontWeight: 700 }}>
-              Adak, Akika, Şifa, Şükür, Nafile
-            </strong>{' '}
-            kurbanlarınız kesilerek talebelerimize ikram edilir. İslami ve hijyenik kesim
-            güvencesiyle, her bütçeye uygun seçeneklerle yanınızdayız.
+            Beykoz'da <strong style={{ color: '#1D6A65', fontWeight: 700 }}>20+ yıllık tecrübe</strong> ile İslami usullere uygun 
+            <strong style={{ color: '#1D6A65', fontWeight: 700 }}> büyükbaş ve küçükbaş kurban kesim hizmeti</strong> sunuyoruz. 
+            Adak, akika, şifa, şükür ve nafile kurbanlarınız hijyenik koşullarda kesilerek, 
+            aynı gün teslimat garantisiyle adresinize ulaştırılır. Her bütçeye uygun 
+            kurbanlık fiyatları ile Beykoz'un en güvenilir kurban kesim merkeziyiz.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -172,7 +171,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
                 className="text-xs font-bold tracking-widest uppercase"
                 style={{ color: '#999' }}
               >
-                20+ Yıllık Tecrübe
+                20+ Yıllık Kurban Tecrübesi
               </span>
             </div>
 
@@ -247,11 +246,11 @@ export function Hero({ phone, whatsapp }: HeroProps) {
                 Kurban Tecrübesi
               </div>
               <div className="text-right">
-                <div className="text-xs font-semibold" style={{ color: '#888' }}>
-                  Kapak Kontrolü
-                </div>
+              <div className="text-xs font-semibold" style={{ color: '#888' }}>
+                Hijyenik Ortam
+              </div>
                 <div className="text-xs font-bold" style={{ color: '#1D6A65' }}>
-                  ✓ Hijyenik Ortam
+                  ✓ İslami Usule Uygun
                 </div>
               </div>
             </div>
