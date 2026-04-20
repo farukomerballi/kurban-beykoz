@@ -8,7 +8,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-[68px] overflow-hidden"
+      className="relative min-h-screen lg:h-screen pt-[68px] overflow-hidden"
       style={{ background: 'var(--cream, #F9F6F1)' }}
     >
       {/* Decorative radial swirl top-right */}
@@ -36,11 +36,11 @@ export function Hero({ phone, whatsapp }: HeroProps) {
         }}
       />
 
-      <div className="relative z-10 grid lg:grid-cols-2 min-h-[calc(100vh-68px)]">
+      <div className="relative z-10 grid lg:grid-cols-2 min-h-[calc(100vh-68px)] lg:max-h-[calc(100vh-68px)]">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col justify-center px-6 sm:px-8 lg:pl-[8vw] lg:pr-[4vw] py-12 lg:py-20">
+        <div className="flex flex-col justify-center px-6 sm:px-8 lg:pl-[8vw] lg:pr-[4vw] py-12 lg:py-10">
           <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit mb-6 text-white text-xs font-bold tracking-widest uppercase"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit mb-4 lg:mb-4 text-white text-xs font-bold tracking-widest uppercase"
             style={{ background: '#1D6A65' }}
           >
             <span>🌙</span>
@@ -59,13 +59,13 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
           >
             <span
-              className="block text-[2.8rem] sm:text-[3.5rem] lg:text-[4.2rem] font-black leading-[1.1]"
+              className="block text-[2.8rem] sm:text-[3.5rem] lg:text-[3.8rem] font-black leading-[1.1]"
               style={{ color: '#7F1D1D' }}
             >
               Beykoz Kurban
             </span>{' '}
             <span
-              className="block text-2xl sm:text-3xl lg:text-[2.4rem] font-extrabold mt-1"
+              className="block text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold mt-1"
               style={{ color: '#1D6A65' }}
             >
               Kesim Hizmeti
@@ -73,7 +73,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
           </h1>
 
           <p
-            className="text-lg font-bold px-4 py-2.5 rounded-r-lg rounded-l-none lg:rounded-lg w-fit mb-6"
+            className="text-base lg:text-sm font-bold px-4 py-2 rounded-r-lg rounded-l-none lg:rounded-lg w-fit mb-4 lg:mb-4"
             style={{
               color: '#B91C1C',
               background: 'rgba(185,28,28,0.08)',
@@ -83,7 +83,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             Kurbanını Erteleme — Hemen Kayıt Ol!
           </p>
 
-          <p className="text-base leading-7 max-w-md mb-8" style={{ color: '#444' }}>
+          <p className="text-sm lg:text-[14px] leading-6 lg:leading-[1.6] max-w-md mb-5 lg:mb-5" style={{ color: '#444' }}>
             Beykoz'da <strong style={{ color: '#1D6A65', fontWeight: 700 }}>20+ yıllık tecrübe</strong> ile İslami usullere uygun
             <strong style={{ color: '#1D6A65', fontWeight: 700 }}> büyükbaş ve küçükbaş kurban kesim hizmeti</strong> sunuyoruz.
             Adak, akika, şifa, şükür ve nafile kurbanlarınız hijyenik koşullarda kesilerek,
@@ -91,7 +91,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             kurbanlık fiyatları ile Beykoz'un en güvenilir kurban kesim merkeziyiz.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-8">
+          <div className="flex flex-wrap gap-2 lg:gap-2 mb-6 lg:mb-5">
             {[
               { icon: '✅', text: '20+ Yıl Tecrübe' },
               { icon: '🕌', text: 'İslami Kesim' },
@@ -100,7 +100,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             ].map((chip, idx) => (
               <div
                 key={idx}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 lg:px-3 lg:py-1 rounded-full text-xs font-bold shadow-sm border"
                 style={{
                   background: '#fff',
                   borderColor: 'rgba(0,0,0,0.08)',
@@ -108,16 +108,16 @@ export function Hero({ phone, whatsapp }: HeroProps) {
                   boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
                 }}
               >
-                <span className="text-base">{chip.icon}</span>
+                <span className="text-sm lg:text-sm">{chip.icon}</span>
                 <span>{chip.text}</span>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4 mb-8">
+          <div className="flex flex-wrap gap-3 lg:gap-3">
             <a
               href={`tel:${phone}`}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-extrabold text-base transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-7 py-3 lg:px-7 lg:py-3 rounded-full text-white font-extrabold text-sm transition-all hover:-translate-y-0.5"
               style={{
                 background: '#B91C1C',
                 fontFamily: 'var(--font-montserrat), Montserrat, sans-serif',
@@ -131,7 +131,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
               href={`https://wa.me/${whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-base transition-all border-2"
+              className="inline-flex items-center gap-2 px-6 py-3 lg:px-6 lg:py-3 rounded-full font-bold text-sm transition-all border-2"
               style={{
                 background: 'transparent',
                 color: '#1D6A65',
@@ -146,9 +146,9 @@ export function Hero({ phone, whatsapp }: HeroProps) {
         </div>
 
         {/* RIGHT VISUAL CARD */}
-        <div className="flex items-center justify-center px-6 sm:px-8 lg:pl-4 lg:pr-[5vw] py-12 lg:py-20">
+        <div className="flex items-center justify-center px-6 sm:px-8 lg:pl-4 lg:pr-[5vw] py-12 lg:py-8">
           <div
-            className="relative w-full max-w-md rounded-[32px] p-6 sm:p-8 overflow-hidden"
+            className="relative w-full max-w-md rounded-[32px] p-5 sm:p-6 lg:p-6 overflow-hidden"
             style={{
               background: '#fff',
               boxShadow: '0 24px 60px rgba(0,0,0,0.1)',
@@ -160,7 +160,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
               style={{ background: 'linear-gradient(90deg, #B91C1C, #1D6A65)' }}
             />
 
-            <div className="flex justify-between items-center mb-6 mt-1">
+            <div className="flex justify-between items-center mb-5 mt-1">
               <span
                 className="px-3 py-1.5 rounded-full text-sm font-extrabold tracking-wide text-white whitespace-nowrap"
                 style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif', background: '#B91C1C' }}
@@ -175,7 +175,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="grid grid-cols-2 gap-3 mb-4">
               {[
                 { emoji: '🐄', name: 'Büyükbaş', price: 'Bütçeye Uygun' },
                 { emoji: '🐑', name: 'Küçükbaş', price: 'Her Bütçe' },
@@ -183,7 +183,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
               ].map((animal, idx) => (
                 <div
                   key={idx}
-                  className="text-center rounded-2xl p-3 transition-all cursor-default border-[1.5px] border-transparent hover:border-[#1D6A65] hover:-translate-y-0.5"
+                  className="text-center rounded-2xl p-2.5 transition-all cursor-default border-[1.5px] border-transparent hover:border-[#1D6A65] hover:-translate-y-0.5"
                   style={{ background: '#F9F6F1' }}
                 >
                   <span className="block text-3xl mb-1">{animal.emoji}</span>
@@ -221,7 +221,7 @@ export function Hero({ phone, whatsapp }: HeroProps) {
             >
               Kurban Türleri
             </p>
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-4">
               {['Adak', 'Akika', 'Şifa', 'Şükür', 'Nafile', 'Kurban'].map((type, idx) => (
                 <span
                   key={idx}
