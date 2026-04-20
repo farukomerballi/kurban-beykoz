@@ -4,4 +4,4 @@ Disallow: /data/
 Disallow: /_next/
 
 # Sitemap
-Sitemap: https://www.kurban-beykoz.com/sitemap.xml
+Sitemap: https://kurban-beykoz.com/sitemap.xml

@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.kurban-beykoz.com/",
+    canonical: "https://kurban-beykoz.com/",
     languages: {
-      'tr': 'https://www.kurban-beykoz.com/',
+      'tr': 'https://kurban-beykoz.com/',
     },
   },
   icons: {
@@ -51,11 +51,11 @@ export const metadata: Metadata = {
     description: "Beykoz'da 20+ yıllık tecrübe ile İslami usullere uygun kurban kesim hizmeti. Büyükbaş, küçükbaş, adak, akika kurbanları. Aynı gün teslimat garantisi.",
     type: "website",
     locale: "tr_TR",
-    url: "https://www.kurban-beykoz.com",
+    url: "https://kurban-beykoz.com",
     siteName: "Beykoz Kurban Kesim Hizmeti",
     images: [
       {
-        url: "https://www.kurban-beykoz.com/images/logo.png",
+        url: "https://kurban-beykoz.com/images/logo.png",
         width: 873,
         height: 344,
         alt: "Beykoz Kurban Organizasyonu - İslami Usullere Uygun Kurban Kesim",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Beykoz Kurban Kesim Hizmeti | İslami Usullere Uygun | 2026",
     description: "Beykoz'da 20+ yıllık tecrübe ile İslami usullere uygun kurban kesim hizmeti. Aynı gün teslimat garantisi.",
-    images: ["https://www.kurban-beykoz.com/images/logo.png"],
+    images: ["https://kurban-beykoz.com/images/logo.png"],
   },
   // Google Search Console doğrulama kodu eklenecek
   // verification: {
@@ -82,7 +82,7 @@ const structuredData = {
     "@type": "WebSite",
     "name": "Beykoz Kurban Kesim Hizmeti",
     "alternateName": "Kurban Beykoz",
-    "url": "https://www.kurban-beykoz.com",
+    "url": "https://kurban-beykoz.com",
     "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. 20+ yıllık tecrübe, hijyenik koşullar, aynı gün teslimat.",
     "inLanguage": "tr-TR",
   },
@@ -90,14 +90,14 @@ const structuredData = {
   localBusiness: {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.kurban-beykoz.com/#business",
+    "@id": "https://kurban-beykoz.com/#business",
     "name": "Beykoz Kurban Organizasyonu",
     "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. 20+ yıllık tecrübe, hijyenik koşullar, aynı gün teslimat. Büyükbaş, küçükbaş, adak, akika, şifa, şükür ve nafile kurbanı kesim hizmeti.",
-    "url": "https://www.kurban-beykoz.com",
+    "url": "https://kurban-beykoz.com",
     "telephone": "+90-542-591-34-51",
     "email": "info@kurban-beykoz.com",
-    "image": "https://www.kurban-beykoz.com/images/logo.png",
-    "logo": "https://www.kurban-beykoz.com/images/logo.png",
+    "image": "https://kurban-beykoz.com/images/logo.png",
+    "logo": "https://kurban-beykoz.com/images/logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Beykoz",
@@ -238,7 +238,7 @@ const structuredData = {
         "@type": "ListItem",
         "position": 1,
         "name": "Ana Sayfa",
-        "item": "https://www.kurban-beykoz.com/"
+        "item": "https://kurban-beykoz.com/"
       }
     ]
   }
