@@ -51,6 +51,7 @@ export function ClientPage({ config }: ClientPageProps) {
       <Contact
         phone={config.contact.phone}
         whatsapp={config.contact.whatsapp}
+        instagram={config.contact.instagram}
         address={config.contact.address}
         mapsUrl={config.contact.mapsUrl}
         workingHours={config.workingHours}
@@ -59,6 +60,7 @@ export function ClientPage({ config }: ClientPageProps) {
       <Footer
         phone={config.contact.phone}
         whatsapp={config.contact.whatsapp}
+        instagram={config.contact.instagram}
       />
 
       <FloatingWhatsAppButton phone={config.contact.whatsapp} />

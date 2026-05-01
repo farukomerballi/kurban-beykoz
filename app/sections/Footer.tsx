@@ -1,9 +1,12 @@
+import { Instagram } from 'lucide-react';
+
 interface FooterProps {
   phone: string;
   whatsapp: string;
+  instagram: string;
 }
 
-export function Footer({ phone, whatsapp }: FooterProps) {
+export function Footer({ phone, whatsapp, instagram }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -93,6 +96,18 @@ export function Footer({ phone, whatsapp }: FooterProps) {
                   style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
                 >
                   💬 WhatsApp ile Ulaşın
+                </a>
+              </div>
+              <div>
+                <a
+                  href={instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white inline-flex items-center gap-2"
+                  style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
+                >
+                  <Instagram size={16} />
+                  Instagram'dan Takip Edin
                 </a>
               </div>
             </address>

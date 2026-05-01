@@ -7,6 +7,7 @@ export interface SiteConfig {
   contact: {
     phone: string;
     whatsapp: string;
+    instagram: string;
     address: string;
     mapsUrl: string;
   };

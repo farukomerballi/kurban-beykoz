@@ -1,14 +1,17 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
+import { Instagram } from 'lucide-react';
+
 interface ContactProps {
   phone: string;
   whatsapp: string;
+  instagram: string;
   address: string;
   mapsUrl: string;
   workingHours: { weekdays: string; weekend: string };
 }
 
-export function Contact({ phone, whatsapp }: ContactProps) {
+export function Contact({ phone, whatsapp, instagram }: ContactProps) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -85,6 +88,20 @@ export function Contact({ phone, whatsapp }: ContactProps) {
               >
                 <span>📞</span>
                 <span>Şimdi Ara</span>
+              </a>
+              <a
+                href={instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all hover:-translate-y-0.5 whitespace-nowrap"
+                style={{
+                  background: 'rgba(255,255,255,0.15)',
+                  color: '#fff',
+                  border: '1px solid rgba(255,255,255,0.25)',
+                }}
+              >
+                <Instagram size={18} />
+                <span>Instagram'dan Takip Edin</span>
               </a>
             </div>
           </div>
