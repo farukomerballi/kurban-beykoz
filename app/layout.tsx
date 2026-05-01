@@ -261,7 +261,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* Google Analytics */}
+        {/* Google Analytics & Google Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D2ZS8E6NWC"
           strategy="afterInteractive"
@@ -272,6 +272,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-D2ZS8E6NWC');
+            gtag('config', 'AW-18133503271');
           `}
         </Script>
 
