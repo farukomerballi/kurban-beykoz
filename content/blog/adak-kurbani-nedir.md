@@ -76,4 +76,4 @@ Evet, WhatsApp veya telefon ile kayıt yaptırıp havale ile ödeme yapabilirsin
 
 ---
 
-*Adak kurbanı hizmeti için: **0542 591 34 51** | WhatsApp ile ulaşın*
+*Adak kurbanı hizmeti için: **+90 555 313 52 90** | WhatsApp ile ulaşın*

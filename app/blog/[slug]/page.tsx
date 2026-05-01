@@ -229,7 +229,7 @@ export default async function BlogPostPage({
               Beykoz'da 20+ yıllık tecrübe ile İslami usullere uygun kurban kesim hizmeti.
             </p>
             <a
-              href="tel:05425913451"
+              href="tel:+905553135290"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-extrabold text-base transition-all hover:-translate-y-0.5"
               style={{
                 background: '#fff',
@@ -239,7 +239,7 @@ export default async function BlogPostPage({
                 textDecoration: 'none',
               }}
             >
-              📞 0542 591 34 51
+              📞 +90 555 313 52 90
             </a>
           </div>
         </div>

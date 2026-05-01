@@ -88,7 +88,7 @@ Sitemap: https://kurban-beykoz.com/sitemap.xml
   "name": "Beykoz Kurban Organizasyonu",
   "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. 20+ yıllık tecrübe.",
   "url": "https://kurban-beykoz.com",
-  "telephone": "+90-542-591-34-51",
+  "telephone": "+90-555-313-52-90",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Beykoz",

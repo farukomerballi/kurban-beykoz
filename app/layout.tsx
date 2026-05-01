@@ -94,7 +94,7 @@ const structuredData = {
     "name": "Beykoz Kurban Organizasyonu",
     "description": "Beykoz'da İslami usullere uygun kurban kesim hizmeti. 20+ yıllık tecrübe, hijyenik koşullar, aynı gün teslimat. Büyükbaş, küçükbaş, adak, akika, şifa, şükür ve nafile kurbanı kesim hizmeti.",
     "url": "https://kurban-beykoz.com",
-    "telephone": "+90-542-591-34-51",
+    "telephone": "+90-555-313-52-90",
     "email": "info@kurban-beykoz.com",
     "image": "https://kurban-beykoz.com/images/logo.png",
     "logo": "https://kurban-beykoz.com/images/logo.png",
@@ -128,7 +128,7 @@ const structuredData = {
     "currenciesAccepted": "TRY",
     "paymentAccepted": "Nakit, Havale, EFT",
     "sameAs": [
-      "https://wa.me/905425913451"
+      "https://wa.me/905553135290"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
