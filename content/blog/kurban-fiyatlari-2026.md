@@ -54,7 +54,7 @@ Kurbanlık fiyatları birçok faktöre bağlı olarak değişiklik gösterebilir
 
 Kurbanınızı kayıt ettirmek için bizi hemen arayabilir veya WhatsApp üzerinden ulaşabilirsiniz. Erken kayıt yaptırmanız durumunda 1. gün teslimat önceliğinden yararlanabilirsiniz.
 
-**📞 Hemen Arayın:** +90 555 313 52 90
+**📞 Hemen Arayın:** +90 542 328 65 29
 
 ---
 

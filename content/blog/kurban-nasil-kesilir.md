@@ -70,4 +70,4 @@ Bayramın 1. günü kesilen kurbanlar aynı gün teslim edilir.
 
 ---
 
-*Detaylı bilgi ve kayıt için: **+90 555 313 52 90***
+*Detaylı bilgi ve kayıt için: **+90 542 328 65 29***
